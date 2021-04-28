@@ -1,1 +1,32 @@
-<p>info works!</p>
+<body>
+  <div class="container">
+    <h1 class="text-center mat-headline mat-h1"><i class="fas fa-fw fa-users"></i> Login</h1>
+
+    <form [formGroup]="data">
+      <mat-grid-list cols="1" rowHeight="90px">
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="field">
+            <mat-label><i class="fas fa-fw fa-user"></i>Username</mat-label>
+            <input matInput placeholder="username" formControlName="username">
+            <mat-error *ngIf="data.controls['username'].invalid">{{getusername()}}</mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+
+        <mat-grid-tile>
+          <mat-form-field appearance="outline" class="field">
+            <mat-label><i class="fas fa-fw fa-unlock"></i>Password</mat-label>
+            <input matInput [type]="hide ? 'password' :'text'" placeholder="password" formControlName="password"
+              autocomplete="on">
+            <mat-error *ngIf="data.controls['password'].invalid">{{getpassword()}}</mat-error>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+
+      <div class="button">
+        <button (click)="check()" [disabled]="data.invalid" mat-flat-button color="primary">Submit</button>
+      </div>
+    </form>
+
+
+  </div>
+</body>

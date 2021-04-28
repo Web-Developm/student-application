@@ -1,40 +1,22 @@
-<body>
-  <div class="container">
-    <h1 class="text-center mat-headline mat-h1"><i class="fas fa-fw fa-users"></i> Login</h1>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon">
+    <mat-icon>menu</mat-icon>
+  </button>
 
-    <form [formGroup]="data">
-      <mat-grid-list cols="1" rowHeight="90px">
-        <mat-grid-tile>
-          <mat-form-field appearance="outline" class="field">
-            <mat-label>Username</mat-label>
-            <input matInput placeholder="username" formControlName="username">
-            <mat-error *ngIf="data.controls['username'].invalid">{{getusername()}}</mat-error>
-          </mat-form-field>
-        </mat-grid-tile>
+  <span>My App</span>
+  <span class="example-spacer"></span>
 
-        <mat-grid-tile>
-          <mat-form-field appearance="outline" class="field">
-            <mat-label>Password</mat-label>
-            <input matInput [type]="hide ? 'password' :'text'" placeholder="password" formControlName="password"
-              autocomplete="on">
-            <mat-error *ngIf="data.controls['password'].invalid">{{getpassword()}}</mat-error>
-          </mat-form-field>
-        </mat-grid-tile>
-      </mat-grid-list>
-
-      <div class="button">
-        <button (click)="check()" [disabled]="data.invalid" mat-flat-button color="primary">Submit</button>
-      </div>
-    </form>
-
-    <router-outlet></router-outlet>
+  <a routerLink="/">
+    <button mat-icon-button>
+      <mat-icon>home</mat-icon>
+    </button>
+  </a>
 
 
+  <a routerLink="/login">
+    <button mat-button>Login</button>
+  </a>
 
+</mat-toolbar>
 
-
-
-
-
-  </div>
-</body>
+<router-outlet></router-outlet>
