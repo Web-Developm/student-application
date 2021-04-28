@@ -15,7 +15,8 @@
         <mat-grid-tile>
           <mat-form-field appearance="outline" class="field">
             <mat-label>Password</mat-label>
-            <input matInput [type]="hide ? 'password' :'text'" placeholder="password" formControlName="password" autocomplete="on">
+            <input matInput [type]="hide ? 'password' :'text'" placeholder="password" formControlName="password"
+              autocomplete="on">
             <mat-error *ngIf="data.controls['password'].invalid">{{getpassword()}}</mat-error>
           </mat-form-field>
         </mat-grid-tile>
@@ -25,6 +26,8 @@
         <button (click)="check()" [disabled]="data.invalid" mat-flat-button color="primary">Submit</button>
       </div>
     </form>
+
+    <router-outlet></router-outlet>
 
 
 

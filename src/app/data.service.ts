@@ -13,19 +13,4 @@ export class DataService {
     password: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
   });
 
-
-
-
-
-
-  getpassword()
-  {
-    if(this.data.controls['password'].hasError('required'))
-
-    {
-      return "Password required";
-    }
-
-    return this.data.controls['password'].hasError('pattern')? "Not valid password":" ";
-  }
 }

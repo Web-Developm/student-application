@@ -49,7 +49,7 @@ export class AppComponent {
 
     for (let i = 0; i < 2; i++) {
       if (username === this.store[i].username && password === this.store[i].password) {
-        alert("login successfull");
+        alert("Login successfull");
         this.data.reset();
         break;
       }
