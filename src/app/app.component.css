@@ -1,0 +1,35 @@
+body{
+  background-image: url("src\assets\annie-spratt-QckxruozjRg-unsplash.jpg");
+  padding-bottom:50px;
+  background-position: center top;
+  background-size: cover;
+  display: flex;
+  margin:0px;
+  height:100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container{
+width:400px;
+max-width: 600px;
+margin:2rem;
+padding:2rem;
+box-shadow: 0 0 40px rgba(0,0,0,0.2);
+background: #fff;
+}
+
+h1{
+  font-size: 30px;
+  padding-bottom:20px;
+}
+
+.field{
+  padding:50px;
+}
+
+.button{
+  text-align: center;
+}
