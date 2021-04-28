@@ -12,11 +12,11 @@ export class Form1Component implements OnInit {
 
   constructor(private ds: DataService) { }
 
-  public form: FormGroup=this.ds.personal;
+  public form: FormGroup = this.ds.personal;
   value1: any;
 
-  public form1:FormGroup=this.ds.performance;
-  value2:any;
+  public form1: FormGroup = this.ds.performance;
+  value2: any;
 
   public submit1(_event: any) {
     this.value1 = _event;
@@ -24,18 +24,17 @@ export class Form1Component implements OnInit {
     console.log(this.form.value);
   }
 
-  public submit2(_event:any)
-  {
-    this.value2=_event;
-    this.form1.value.sample=this.value2;
+  public submit2(_event: any) {
+    this.value2 = _event;
+    this.form1.value.sample = this.value2;
     console.log(this.form1);
 
   }
 
-  display()
-  {
-    console.log(this.ds.personal.value);
-    console.log(this.ds.performance.value);
+  display() {
+    console.log(this.form.value);
+    console.log(this.form1.value);
+
   }
 
 

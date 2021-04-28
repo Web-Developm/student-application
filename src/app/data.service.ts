@@ -27,6 +27,8 @@ export class DataService {
     percentage: ['', [Validators.required]]
   });
 
+
+
   get(): Observable<any> {
     return this.http.get('http://localhost:5555/data');
   }
