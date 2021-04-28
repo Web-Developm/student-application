@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DataService } from '../app/data.service';
 
@@ -8,7 +8,7 @@ import { DataService } from '../app/data.service';
   styleUrls: ['./app.component.css'],
   providers: [DataService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'student';
   hide = true;
 
@@ -17,6 +17,8 @@ export class AppComponent {
   }
 
   public data: FormGroup = this.ds.data;
+
+  public store: any;
 
   getusername() {
     if (this.data.controls['username'].hasError('required')) {
@@ -36,31 +38,36 @@ export class AppComponent {
     }
   }
 
-  store = [
-    {
-      username: "admin",
-      password: "123"
-    }
-  ];
+  information()
+  {
+    this.ds.get().subscribe(
+      data => {
+        this.store = data;
+        console.log(data);
+      }
+    )
+  }
+
+
 
   check() {
     let username = this.data.controls['username'].value;
     let password = this.data.controls['password'].value;
 
     for (let i = 0; i < 2; i++) {
-      if (username === this.store[i].username && password === this.store[i].password) {
+      if (username == this.store[i].username && password == this.store[i].password) {
         alert("Login successfull");
         this.data.reset();
         break;
       }
 
-      else if (username !== this.store[i].username && password === this.store[i].password) {
+      else if (username != this.store[i].username && password == this.store[i].password) {
         alert("Invalid username");
         this.data.reset();
         break;
       }
 
-      else if (username === this.store[i].username && password !== this.store[i].password) {
+      else if (username == this.store[i].username && password != this.store[i].password) {
         alert("Invalid password");
         this.data.reset();
         break;
@@ -72,8 +79,14 @@ export class AppComponent {
 
     }
 
-
   }
+
+  ngOnInit()
+  {
+    this.information();
+  }
+
+
 
 
 
