@@ -36,32 +36,45 @@ export class AppComponent {
     }
   }
 
-  store = [{
-    username: "admin",
-    password: "123"
-  }]
+  store = [
+    {
+      username: "admin",
+      password: "123"
+    }
+  ];
 
   check() {
     let username = this.data.controls['username'].value;
     let password = this.data.controls['password'].value;
 
-    if (username == this.store[0].username && password == this.store[0].password) {
-      alert("login successfull");
+    for (let i = 0; i < 2; i++) {
+      if (username === this.store[i].username && password === this.store[i].password) {
+        alert("login successfull");
+        this.data.reset();
+        break;
+      }
+
+      else if (username !== this.store[i].username && password === this.store[i].password) {
+        alert("Invalid username");
+        this.data.reset();
+        break;
+      }
+
+      else if (username === this.store[i].username && password !== this.store[i].password) {
+        alert("Invalid password");
+        this.data.reset();
+        break;
+      }
+
+      else {
+        alert("Invalid Login details");
+      }
+
     }
 
-    else if (username != this.store[0].username && password == this.store[0].password) {
-      alert("Invalid username");
-    }
-
-    else if (username == this.store[0].username && password != this.store[0].password) {
-      alert("Invalid password");
-    }
-
-    else {
-      alert("Invalid Login details");
-    }
 
   }
+
 
 
 }
