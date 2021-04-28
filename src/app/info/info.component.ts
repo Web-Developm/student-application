@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from '../data.service';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -9,7 +10,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class InfoComponent implements OnInit {
 
-  constructor(private ds:DataService) { }
+  constructor(private ds:DataService, private route:Router) { }
 
   public data:FormGroup=this.ds.data;
   public store:any;
@@ -51,6 +52,7 @@ export class InfoComponent implements OnInit {
     for (let i = 0; i < 2; i++) {
       if (username == this.store[i].username && password == this.store[i].password) {
         alert("Login successfull");
+        this.route.navigate(['/form']);
         this.data.reset();
         break;
       }

@@ -1,0 +1,22 @@
+<div class="container">
+
+  <mat-tab-group>
+    <mat-tab label="add">
+      <app-personal (personal)="submit1($event)"></app-personal>
+      <app-performance (performance)="submit2($event)"></app-performance>
+
+      <div class="text-center">
+        <button (click)="display()" mat-raised-button color="primary">Submit</button>
+      </div>
+
+
+
+    </mat-tab>
+
+    <mat-tab label="data">
+      Data
+    </mat-tab>
+  </mat-tab-group>
+
+
+</div>

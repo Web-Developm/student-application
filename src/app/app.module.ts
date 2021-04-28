@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule, route } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,15 +16,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { DataService } from '../app/data.service';
 import { InfoComponent } from './info/info.component';
+import { Form1Component } from './form1/form1.component';
+import { PersonalComponent } from './personal/personal.component';
+import { PerformanceComponent } from './performance/performance.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
-    route
+    route,
+    Form1Component,
+    PersonalComponent,
+    PerformanceComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +46,8 @@ import { InfoComponent } from './info/info.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatTabsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
