@@ -3,6 +3,7 @@
     <mat-form-field appearance="outline">
       <mat-label>Percentage</mat-label>
       <input matInput placeholder="percentage" formControlName="percentage">
+      <mat-error *ngIf="per.controls['percentage'].invalid">{{getpercentage()}}</mat-error>
     </mat-form-field>
   </form>
 </div>

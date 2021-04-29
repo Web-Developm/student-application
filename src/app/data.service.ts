@@ -32,7 +32,7 @@ export class DataService{
   });
 
   performance = this.fb.group({
-    percentage: ['', [Validators.required]]
+    percentage: ['', [Validators.required,Validators.pattern('[a-zA-Z]*')]]
   });
 
 

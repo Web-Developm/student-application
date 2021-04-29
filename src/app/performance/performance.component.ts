@@ -19,6 +19,16 @@ export class PerformanceComponent implements OnInit {
     this.performance.emit(this.per);
   }
 
+  getpercentage()
+  {
+    if(this.per.controls['percentage'].hasError('required'))
+    {
+      return "Percentage required";
+    }
+
+    return this.per.controls['percentage'].hasError('pattern')? "Not a valid percentage":" ";
+  }
+
   ngOnInit(): void {
   }
 
