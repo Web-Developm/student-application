@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { DataService } from '../data.service';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { PersonalComponent } from '../personal/personal.component';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms'
 })
 export class Form1Component implements OnInit {
 
-  constructor(private ds: DataService) { }
+  constructor(private ds: DataService, private resolver:ComponentFactoryResolver) { }
 
   public form: FormGroup = this.ds.personal;
   value1: any;
@@ -46,6 +47,20 @@ export class Form1Component implements OnInit {
     console.log(this.form2.value);
 
   }
+
+  @ViewChild('personal', { static: false, read: ViewContainerRef }) target!: ViewContainerRef;
+  private componentRef!: ComponentRef<any>;
+
+  addPersonal()
+  {
+    let childComponent=this.resolver.resolveComponentFactory(PersonalComponent);
+    this.componentRef=this.target.createComponent(childComponent);
+  }
+
+
+
+
+
 
 
 
