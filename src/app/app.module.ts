@@ -23,6 +23,7 @@ import { InfoComponent } from './info/info.component';
 import { Form1Component } from './form1/form1.component';
 import { PersonalComponent } from './personal/personal.component';
 import { PerformanceComponent } from './performance/performance.component';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PerformanceComponent } from './performance/performance.component';
     route,
     Form1Component,
     PersonalComponent,
-    PerformanceComponent
+    PerformanceComponent,
+    AddressComponent
   ],
   imports: [
     BrowserModule,

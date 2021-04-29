@@ -18,6 +18,9 @@ export class Form1Component implements OnInit {
   public form1: FormGroup = this.ds.performance;
   value2: any;
 
+  public form2: FormGroup = this.ds.address;
+  value3: any;
+
   public submit1(_event: any) {
     this.value1 = _event;
     this.form.value.sample = this.value1;
@@ -31,9 +34,16 @@ export class Form1Component implements OnInit {
 
   }
 
+  public submit3(_event: any) {
+    this.value3 = _event;
+    this.form2.value.sample = this.value3;
+    console.log(this.form2);
+  }
+
   display() {
     console.log(this.form.value);
     console.log(this.form1.value);
+    console.log(this.form2.value);
 
   }
 

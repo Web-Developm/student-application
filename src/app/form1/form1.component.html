@@ -4,7 +4,7 @@
     <mat-tab label="add">
       <app-personal (personal)="submit1($event)"></app-personal>
       <app-performance (performance)="submit2($event)"></app-performance>
-
+      <app-address (address)="submit3($event)"></app-address>
       <div class="text-center">
         <button (click)="display()" mat-raised-button color="primary">Submit</button>
       </div>
