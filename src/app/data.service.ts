@@ -24,11 +24,11 @@ export class DataService{
 
 
   personal = this.fb.group({
-    first: ['', [Validators.required]],
-    last: ['', [Validators.required]],
-    email: ['', [Validators.required]],
-    gender: ['', [Validators.required]],
-    phone: ['', [Validators.required]]
+    first: ['', [Validators.required,Validators.pattern('[a-zA-Z]*')]],
+    last: ['', [Validators.required,Validators.pattern('[a-zA-Z]*')]],
+    email: ['', [Validators.required,Validators.email]],
+    gender: ['', [Validators.required,Validators.pattern('[a-zA-Z]*')]],
+    phone: ['', [Validators.required,Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
   });
 
   performance = this.fb.group({
