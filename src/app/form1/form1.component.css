@@ -1,0 +1,8 @@
+.top{
+  display: table;
+}
+
+button{
+  margin:10px;
+  border-radius:1rem;
+}

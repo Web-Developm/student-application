@@ -1,15 +1,30 @@
-<div class="container">
+<div class="container top">
 
   <!--<app-personal (personal)="submit1($event)"></app-personal>
   <app-performance (performance)="submit2($event)"></app-performance>
   <app-address (address)="submit3($event)"></app-address>
-  <div class="text-center">
-    <button (click)="display()" mat-raised-button color="primary">Submit</button>
-  </div>-->
+  -->
+
+  <button (click)="addPersonal()" mat-raised-button color="primary">ADD Personal</button>
+
+  <button (click)="addPerformance()" mat-raised-button color="primary">Add Performance</button>
+
+  <button (click)="addaddress()" mat-raised-button color="primary">Add Address</button>
 
   <div class="container" #personal></div>
 
-  <button (click)="addPersonal()" mat-raised-button color="primary">ADD Personal</button>
+  <div class="container" #performance></div>
+
+  <div class="container" #address></div>
+
+
+
+  <div class="text-center">
+    <button (click)="display()" mat-raised-button color="primary">Submit</button>
+  </div>
+
+
+
 
 
 </div>
