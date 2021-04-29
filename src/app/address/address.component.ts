@@ -26,8 +26,13 @@ export class AddressComponent implements OnInit {
     this.address.emit(this.fields);
   }
 
+  add() {
+    this.ds.add1();
+  }
 
-
+  delete(index: any) {
+    this.ds.remove(index);
+  }
 
   print() {
     console.log(this.fields.value);

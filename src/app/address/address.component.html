@@ -4,6 +4,13 @@
       <section *ngFor="let add1 of  fields.controls;let i=index">
         <section [formGroupName]="i">
 
+          <div class="button">
+            <button (click)="add()" mat-raised-button color="primary">Add</button>
+            <button (click)="delete(i)" mat-raised-button color="primary" name="delete">Delete</button>
+          </div>
+
+
+
           <mat-form-field appearance="outline">
             <mat-label>Street</mat-label>
             <input matInput placeholder="street" formControlName="street">
