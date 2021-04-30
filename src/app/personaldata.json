@@ -1,0 +1,101 @@
+{
+  "personaldata": [
+    {
+      "id": "0",
+      "first": "Satya",
+      "last": "Krishna",
+      "email": "satya@gmail.com",
+      "gender": "Male",
+      "phone": "6000"
+    },
+    {
+      "id": "1",
+      "first": "Ravi",
+      "last": "Kumar",
+      "email": "ravi@gmail.com",
+      "gender": "Male",
+      "phone": "737434"
+    },
+    {
+      "id": "2",
+      "first": "Apple",
+      "last": "MacBook",
+      "email": "apple@gmail.com",
+      "gender": "Male",
+      "phone": "3242323",
+      "percentage": "80"
+    },
+    {
+      "id": "A1JCNLH",
+      "first": "",
+      "last": "",
+      "email": "",
+      "gender": "",
+      "phone": "",
+      "percentage": ""
+    },
+    {
+      "id": "KVVsNoA",
+      "first": "",
+      "last": "",
+      "email": "",
+      "gender": "",
+      "phone": "",
+      "percentage": ""
+    },
+    {
+      "id": "01v7BLC",
+      "first": "",
+      "last": "",
+      "email": "",
+      "gender": "",
+      "phone": "",
+      "percentage": ""
+    },
+    {
+      "id": "-K2banv",
+      "first": "",
+      "last": "",
+      "email": "",
+      "gender": "",
+      "phone": "",
+      "percentage": ""
+    },
+    {
+      "id": "h1IiFC2",
+      "first": "",
+      "last": "",
+      "email": "",
+      "gender": "",
+      "phone": "",
+      "percentage": ""
+    },
+    {
+      "id": "jR68YWl",
+      "first": "",
+      "last": "",
+      "email": "",
+      "gender": "",
+      "phone": "",
+      "percentage": ""
+    },
+    {
+      "id": "zlNUDsf",
+      "first": "",
+      "last": "",
+      "email": "",
+      "gender": "",
+      "phone": "",
+      "percentage": ""
+    },
+    {
+      "id": "3",
+      "first": "Thomas",
+      "last": "Hardy",
+      "email": "thomas@gmail.com",
+      "gender": "Male",
+      "phone": "93249374",
+      "percentage": "60"
+    }
+  ]
+}

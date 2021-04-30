@@ -44,24 +44,20 @@ export class PersonalComponent implements OnInit {
     return this.form.controls['email'].hasError('email') ? "Not a valid email" : " ";
   }
 
-  getgender()
-  {
-    if(this.form.controls['gender'].hasError('required'))
-    {
+  getgender() {
+    if (this.form.controls['gender'].hasError('required')) {
       return "Gender required";
     }
 
-    return this.form.controls['gender'].hasError('pattern')? "Not a valid name" : " ";
+    return this.form.controls['gender'].hasError('pattern') ? "Not a valid name" : " ";
   }
 
-  getphone()
-  {
-    if(this.form.controls['phone'].hasError('required'))
-    {
+  getphone() {
+    if (this.form.controls['phone'].hasError('required')) {
       return "Phone number required";
     }
 
-    return this.form.controls['phone'].hasError('pattern')? "Not a valid phone number":" ";
+    return this.form.controls['phone'].hasError('pattern') ? "Not a valid phone number" : " ";
   }
 
   ngOnInit(): void {

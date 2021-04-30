@@ -38,6 +38,16 @@ export class AddressComponent implements OnInit {
     console.log(this.fields.value);
   }
 
+  getstreet()
+  {
+    if(this.group.controls['street'].hasError('required'))
+    {
+      return "Street required";
+    }
+
+    return 0;
+  }
+
 
 
 

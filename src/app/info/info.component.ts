@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from '../data.service';
+import { DataService } from '../data.service';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -10,11 +10,12 @@ import { Router } from '@angular/router';
 })
 export class InfoComponent implements OnInit {
 
-  constructor(private ds:DataService, private route:Router) { }
+  constructor(private ds: DataService, private route: Router) { }
 
-  public data:FormGroup=this.ds.data;
-  public store:any;
-  hide=true;
+  store: any;
+
+  public data: FormGroup = this.ds.data;
+  hide = true;
 
   getusername() {
     if (this.data.controls['username'].hasError('required')) {
@@ -35,7 +36,7 @@ export class InfoComponent implements OnInit {
   }
 
   information() {
-    this.ds.get().subscribe(
+    this.ds.login().subscribe(
       data => {
         this.store = data;
         console.log(data);
@@ -44,26 +45,26 @@ export class InfoComponent implements OnInit {
   }
 
 
-
   check() {
     let username = this.data.controls['username'].value;
     let password = this.data.controls['password'].value;
 
-    for (let i = 0; i < 2; i++) {
-      if (username == this.store[i].username && password == this.store[i].password) {
+
+    for (let id = 0; id < 2; id++) {
+      if (username == this.store[id].username && password == this.store[id].password) {
         alert("Login successfull");
         this.route.navigate(['/form']);
         this.data.reset();
         break;
       }
 
-      else if (username != this.store[i].username && password == this.store[i].password) {
+      else if (username != this.store[id].username && password == this.store[id].password) {
         alert("Invalid username");
         this.data.reset();
         break;
       }
 
-      else if (username == this.store[i].username && password != this.store[i].password) {
+      else if (username == this.store[id].username && password != this.store[id].password) {
         alert("Invalid password");
         this.data.reset();
         break;

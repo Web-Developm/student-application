@@ -17,6 +17,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
 
 import { DataService } from '../app/data.service';
 import { InfoComponent } from './info/info.component';
@@ -24,6 +25,7 @@ import { Form1Component } from './form1/form1.component';
 import { PersonalComponent } from './personal/personal.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { AddressComponent } from './address/address.component';
+import { Structure1 } from './structure1';
 
 @NgModule({
   declarations: [
@@ -49,9 +51,12 @@ import { AddressComponent } from './address/address.component';
     MatToolbarModule,
     MatIconModule,
     MatMenuModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTableModule
+
   ],
-  providers: [DataService],
-  bootstrap: [AppComponent]
+  providers: [DataService,Structure1],
+  bootstrap: [AppComponent],
+  entryComponents:[PersonalComponent,PerformanceComponent,AddressComponent]
 })
 export class AppModule { }
