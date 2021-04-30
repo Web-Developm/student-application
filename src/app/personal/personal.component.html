@@ -26,7 +26,11 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Gender</mat-label>
-      <input matInput placeholder="gender" formControlName="gender">
+      <mat-select formControlName="gender">
+        <mat-option *ngFor="let items of genderdetails" [value]="items.value">
+          {{items.viewValue}}
+        </mat-option>
+      </mat-select>
       <mat-error *ngIf="form.controls['gender'].invalid">{{getgender()}}</mat-error>
     </mat-form-field>
 

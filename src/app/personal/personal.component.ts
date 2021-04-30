@@ -16,6 +16,8 @@ export class PersonalComponent implements OnInit {
 
   public form: FormGroup = this.ds.personal;
 
+  public genderdetails=this.ds.genderdetails;
+
   display(event: any) {
     this.personal.emit(this.form);
   }
@@ -49,7 +51,7 @@ export class PersonalComponent implements OnInit {
       return "Gender required";
     }
 
-    return this.form.controls['gender'].hasError('pattern') ? "Not a valid name" : " ";
+    return "";
   }
 
   getphone() {

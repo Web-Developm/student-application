@@ -23,7 +23,6 @@ export class Form1Component implements OnInit {
 
   constructor(private ds: DataService, private resolver: ComponentFactoryResolver) { }
 
-  personal1 = ["id", "first", "last", "email", "gender", "phone", "percentage", "street", "city", "pincode", "state", "country"];
 
   public form: FormGroup = this.ds.personal;
   value1: any;
@@ -63,6 +62,7 @@ export class Form1Component implements OnInit {
   private componentRef!: ComponentRef<any>;
 
   addPersonal() {
+
     let childComponent = this.resolver.resolveComponentFactory(PersonalComponent);
     this.componentRef = this.target.createComponent(childComponent);
   }
@@ -85,14 +85,7 @@ export class Form1Component implements OnInit {
 
 
 
-  personaldata() {
-    this.ds.personaldata().subscribe(
-      data => {
-        this.store = data;
-        console.log(data);
-      }
-    )
-  }
+
 
   addpersonaldata() {
     let index: any;
@@ -105,7 +98,11 @@ export class Form1Component implements OnInit {
     temp.gender = this.form.controls['gender'].value;
     temp.phone = this.form.controls['phone'].value;
     temp.percentage = this.form1.controls['percentage'].value;
-    temp.street = this.arrayControl.at(index);
+    temp.street = this.arrayControl.at(0).get('street')?.value;
+    temp.city = this.arrayControl.at(0).get('city')?.value;
+    temp.pincode = this.arrayControl.at(0).get('pincode')?.value;
+    temp.state = this.arrayControl.at(0).get('state')?.value;
+    temp.country = this.arrayControl.at(0).get('country')?.value;
 
 
     this.ds.addpersonaldata(temp).subscribe(
@@ -127,7 +124,6 @@ export class Form1Component implements OnInit {
 
 
   ngOnInit(): void {
-    this.personaldata();
   }
 
 }

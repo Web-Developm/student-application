@@ -15,6 +15,8 @@ export class PerformanceComponent implements OnInit {
 
   public per = this.ds.performance;
 
+
+
   display() {
     this.performance.emit(this.per);
   }

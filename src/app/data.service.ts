@@ -30,9 +30,19 @@ export class DataService implements OnInit {
     first: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     last: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     email: ['', [Validators.required, Validators.email]],
-    gender: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
+    gender: ['', [Validators.required]],
     phone: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
   });
+
+  genderdetails=[
+    {
+      value:'Male', viewValue:'Male'
+    },
+
+    {
+      value:'Female', viewValue:'Female'
+    }
+]
 
   performance = this.fb.group({
     percentage: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]

@@ -18,6 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
 
 import { DataService } from '../app/data.service';
 import { InfoComponent } from './info/info.component';
@@ -54,7 +55,8 @@ import { DataComponent } from './data/data.component';
     MatIconModule,
     MatMenuModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
 
   ],
   providers: [DataService,Structure1],
