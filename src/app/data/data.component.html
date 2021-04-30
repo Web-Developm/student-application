@@ -67,6 +67,12 @@
       <mat-cell *matCellDef="let element">{{element.country}}</mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="information" class="example">
+      <mat-header-cell *matHeaderCellDef>Information</mat-header-cell>
+      <mat-cell *matCellDef="let element; let i=index"><button mat-flat-button color="primary"
+          (click)="display()">Click</button></mat-cell>
+    </ng-container>
+
     <mat-header-row *matHeaderRowDef="personal1"></mat-header-row>
     <mat-row *matRowDef="let row; columns:personal1"></mat-row>
   </mat-table>
