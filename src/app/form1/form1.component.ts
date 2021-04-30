@@ -32,6 +32,9 @@ export class Form1Component implements OnInit {
   value2: any;
 
   public form2: FormGroup = this.ds.address;
+
+  public arrayControl = this.form2.get('add') as FormArray;
+
   value3: any;
 
 
@@ -92,6 +95,8 @@ export class Form1Component implements OnInit {
   }
 
   addpersonaldata() {
+    let index: any;
+
     let temp = new Structure1();
     temp.id = this.form.controls['id'].value;
     temp.first = this.form.controls['first'].value;
@@ -100,10 +105,7 @@ export class Form1Component implements OnInit {
     temp.gender = this.form.controls['gender'].value;
     temp.phone = this.form.controls['phone'].value;
     temp.percentage = this.form1.controls['percentage'].value;
-    temp.street = this.form2.get('add.street')?.value;
-    temp.city = this.form2.get('add.city')?.value;
-    temp.pincode = this.form2.get('add.pincode')?.value;
-    temp.country = this.form2.get('add.country')?.value;
+    temp.street = this.arrayControl.at(index);
 
 
     this.ds.addpersonaldata(temp).subscribe(
@@ -126,9 +128,6 @@ export class Form1Component implements OnInit {
 
   ngOnInit(): void {
     this.personaldata();
-
-    console.log(this.form2);
-
   }
 
 }

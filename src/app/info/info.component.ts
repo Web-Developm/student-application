@@ -53,7 +53,7 @@ export class InfoComponent implements OnInit {
     for (let id = 0; id < 2; id++) {
       if (username == this.store[id].username && password == this.store[id].password) {
         alert("Login successfull");
-        this.route.navigate(['/form']);
+        this.route.navigate(['/data']);
         this.data.reset();
         break;
       }

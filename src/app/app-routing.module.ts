@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InfoComponent } from '../app/info/info.component';
 import { AddressComponent } from './address/address.component';
 import { AppComponent } from './app.component';
+import { DataComponent } from './data/data.component';
 import { Form1Component } from './form1/form1.component';
 
 const routes: Routes = [
@@ -14,12 +15,16 @@ const routes: Routes = [
   },
 
   {
-    path:'form', component:Form1Component
+    path: 'form', component: Form1Component
   },
 
   {
-    path:"array", component:AddressComponent
+    path: "array", component: AddressComponent
+  },
+  {
+    path: "data", component: DataComponent
   }
+
 ];
 
 @NgModule({
@@ -27,4 +32,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const route = [InfoComponent];
+export const route = [InfoComponent, DataComponent];

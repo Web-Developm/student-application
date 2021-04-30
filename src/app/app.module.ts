@@ -26,6 +26,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { PerformanceComponent } from './performance/performance.component';
 import { AddressComponent } from './address/address.component';
 import { Structure1 } from './structure1';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { Structure1 } from './structure1';
     Form1Component,
     PersonalComponent,
     PerformanceComponent,
-    AddressComponent
+    AddressComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,

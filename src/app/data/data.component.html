@@ -1,0 +1,68 @@
+<div class="jumbotron data">
+
+  <mat-table [dataSource]="list" class="mat-elevation-z8">
+    <ng-container matColumnDef="id" class="example">
+      <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.id}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="first" class="example">
+      <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.first}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="last" class="example">
+      <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.last}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email" class="example">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.email}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="gender" class="example">
+      <mat-header-cell *matHeaderCellDef>Gender</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.gender}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="phone" class="example">
+      <mat-header-cell *matHeaderCellDef>Phone</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.phone}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="percentage" class="example">
+      <mat-header-cell *matHeaderCellDef>Percentage</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.percentage}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="street" class="example">
+      <mat-header-cell *matHeaderCellDef>Street</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.street}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="city" class="example">
+      <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.city}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="pincode" class="exmaple">
+      <mat-header-cell *matHeaderCellDef>Pincode</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.pincode}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="state" class="example">
+      <mat-header-cell *matHeaderCellDef>State</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.state}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="country" class="example">
+      <mat-header-cell *matHeaderCellDef>Country</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.country}}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="personal1"></mat-header-row>
+    <mat-row *matRowDef="let row; columns:personal1"></mat-row>
+  </mat-table>
+
+</div>
