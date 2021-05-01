@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InfoComponent } from '../app/info/info.component';
 import { AddressComponent } from './address/address.component';
-import { AppComponent } from './app.component';
 import { DataComponent } from './data/data.component';
 import { Form1Component } from './form1/form1.component';
+import { ResultComponent } from './result/result.component';
 
 const routes: Routes = [
   {
@@ -23,6 +23,10 @@ const routes: Routes = [
   },
   {
     path: "data", component: DataComponent
+  },
+
+  {
+    path: "result", component: ResultComponent
   }
 
 ];
@@ -32,4 +36,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const route = [InfoComponent, DataComponent];
+export const route = [InfoComponent, DataComponent, ResultComponent];

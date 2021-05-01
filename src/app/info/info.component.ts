@@ -46,25 +46,29 @@ export class InfoComponent implements OnInit {
 
 
   check() {
-    let username = this.data.controls['username'].value;
-    let password = this.data.controls['password'].value;
 
 
-    for (let id = 0; id < 2; id++) {
-      if (username == this.store[id].username && password == this.store[id].password) {
+
+    for (let i = 0; i < 2; i++) {
+
+      let user1 = this.store[i].username;
+
+      let pass = this.store[i].password;
+
+      if (user1 == this.data.controls['username'].value && pass == this.store[i].password) {
         alert("Login successfull");
         this.route.navigate(['/data']);
         this.data.reset();
         break;
       }
 
-      else if (username != this.store[id].username && password == this.store[id].password) {
+      else if (user1 != this.data.controls['username'].value && pass == this.store[i].password) {
         alert("Invalid username");
         this.data.reset();
         break;
       }
 
-      else if (username == this.store[id].username && password != this.store[id].password) {
+      else if (user1 == this.data.controls['username'].value && pass != this.store[i].password) {
         alert("Invalid password");
         this.data.reset();
         break;

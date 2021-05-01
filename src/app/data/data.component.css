@@ -1,3 +1,16 @@
 .form{
-  padding:20px;
+
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+mat-form-field {
+  padding-top:50px;
+  width:100%;
+  text-align:center;
+}
+
+table{
+  width:100%;
+  box-shadow: none;
 }

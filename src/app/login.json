@@ -1,7 +1,6 @@
 {
   "login":[
     {
-      "id":0,
       "username":"admin",
       "password":"123"
     }

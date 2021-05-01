@@ -19,6 +19,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import {MatListModule} from '@angular/material/list';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { DataService } from '../app/data.service';
 import { InfoComponent } from './info/info.component';
@@ -58,8 +61,10 @@ import { ResultComponent } from './result/result.component';
     MatMenuModule,
     MatTabsModule,
     MatTableModule,
-    MatSelectModule
-
+    MatSelectModule,
+    MatListModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [DataService,Structure1],
   bootstrap: [AppComponent],
