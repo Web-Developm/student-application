@@ -69,6 +69,34 @@
       "pincode": "50072",
       "state": "Telangana",
       "country": "India"
+    },
+    {
+      "id": "5",
+      "first": "Ravi",
+      "last": "Kumar",
+      "email": "ravi@gmail.com",
+      "gender": "Male",
+      "phone": "987654321",
+      "percentage": "60",
+      "street": "Rangareddy",
+      "city": "Rangareddy",
+      "pincode": "50073",
+      "state": "Telangana",
+      "country": "India"
+    },
+    {
+      "id": "6",
+      "first": "Srinivas",
+      "last": "Rao",
+      "email": "srinivas@gmail.com",
+      "gender": "Male",
+      "phone": "987654321",
+      "percentage": "90",
+      "street": "Sangareddy",
+      "city": "Sangareddy",
+      "pincode": "50082",
+      "state": "Telangana",
+      "country": "India"
     }
   ]
 }

@@ -13,7 +13,7 @@
   <div class="row" #address></div>
 
   <div class="text-center">
-    <button (click)="addpersonaldata()" mat-raised-button color="primary">Submit</button>
+    <button (click)="addpersonaldata()" [disabled]="form.invalid" mat-raised-button color="primary">Submit</button>
   </div>
 
 </div>

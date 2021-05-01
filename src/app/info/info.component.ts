@@ -49,13 +49,13 @@ export class InfoComponent implements OnInit {
 
 
 
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i <this.store.length; i++) {
 
       let user1 = this.store[i].username;
 
       let pass = this.store[i].password;
 
-      if (user1 == this.data.controls['username'].value && pass == this.store[i].password) {
+      if (this.data.controls['username'].value == user1 && this.data.controls['password'].value == pass) {
         alert("Login successfull");
         this.route.navigate(['/data']);
         this.data.reset();

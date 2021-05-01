@@ -16,10 +16,18 @@ export class PersonalComponent implements OnInit {
 
   public form: FormGroup = this.ds.personal;
 
-  public genderdetails=this.ds.genderdetails;
+  public genderdetails = this.ds.genderdetails;
 
   display(event: any) {
     this.personal.emit(this.form);
+  }
+
+  getid() {
+    if (this.form.controls['id'].hasError('required')) {
+      return "Id required";
+    }
+
+    return this.form.controls['id'].hasError('pattern') ? "Not a valid id" : " ";
   }
 
   getfirst() {

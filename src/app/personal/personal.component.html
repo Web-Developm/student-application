@@ -3,30 +3,31 @@
 
     <mat-form-field appearance="outline">
       <mat-label>RollNumber</mat-label>
-      <input matInput placeholder="id" formControlName="id">
+      <input matInput placeholder="id" formControlName="id" required>
+      <mat-error *ngIf="form.controls['id'].invalid">{{getid()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>First Name</mat-label>
-      <input matInput placeholder="firstname" formControlName="first">
+      <input matInput placeholder="firstname" formControlName="first" required>
       <mat-error *ngIf="form.controls['first'].invalid">{{getfirst()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Last Name</mat-label>
-      <input matInput placeholder="lastname" formControlName="last">
+      <input matInput placeholder="lastname" formControlName="last" required>
       <mat-error *ngIf="form.controls['last'].invalid">{{getlast()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input matInput placeholder="email" formControlName="email">
+      <input matInput placeholder="email" formControlName="email" required>
       <mat-error *ngIf="form.controls['email'].invalid">{{getemail()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="outline">
       <mat-label>Gender</mat-label>
-      <mat-select formControlName="gender">
+      <mat-select formControlName="gender" required>
         <mat-option *ngFor="let items of genderdetails" [value]="items.value">
           {{items.viewValue}}
         </mat-option>
@@ -36,7 +37,7 @@
 
     <mat-form-field appearance="outline">
       <mat-label>Phone</mat-label>
-      <input matInput placeholder="phone" formControlName="phone">
+      <input matInput placeholder="phone" formControlName="phone" required>
       <mat-error *ngIf="form.controls['phone'].invalid">{{getphone()}}</mat-error>
     </mat-form-field>
   </form>

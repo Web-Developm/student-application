@@ -112,6 +112,10 @@ export class Form1Component implements OnInit {
       }
     )
 
+    this.form.reset();
+    this.form1.reset();
+    this.form2.reset();
+
   }
 
 

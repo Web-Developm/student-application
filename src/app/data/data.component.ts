@@ -55,7 +55,7 @@ export class DataComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.list.paginator=this.paginator;
+    this.list.paginator = this.paginator;
     this.list.sort = this.sort;
     this.ds.personaldata().subscribe(
       data => {

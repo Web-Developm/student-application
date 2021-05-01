@@ -26,7 +26,7 @@ export class DataService implements OnInit {
 
 
   personal = this.fb.group({
-    id: [''],
+    id: ['',[Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
     first: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     last: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     email: ['', [Validators.required, Validators.email]],
