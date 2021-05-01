@@ -8,9 +8,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ResultComponent implements OnInit {
 
-  public resultinfo: any;
+  public resultinfo!: any;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
+
+  sample=['id','first','last','email','gender','phone','percentage','street','city','pincode','state','country'];
 
   ngOnInit(): void {
     let id = this.route.params.subscribe((params: any) => {

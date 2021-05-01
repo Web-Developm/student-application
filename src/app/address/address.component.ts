@@ -19,7 +19,7 @@ export class AddressComponent implements OnInit {
 
   group: FormGroup = this.ds.address;
 
-  fields=this.group.get('add') as FormArray;
+  fields = this.group.get('add') as FormArray;
 
 
   display() {
@@ -39,10 +39,8 @@ export class AddressComponent implements OnInit {
     console.log(this.fields.value);
   }
 
-  getstreet()
-  {
-    if(this.fields.at(0).get('street')?.hasError('required'))
-    {
+  getstreet() {
+    if (this.fields.at(0).get('street')?.hasError('required')) {
       return "Street required";
     }
 

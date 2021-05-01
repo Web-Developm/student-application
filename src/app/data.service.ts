@@ -10,13 +10,14 @@ import { Structure1 } from './structure1';
 export class DataService implements OnInit {
 
 
-
+address!:FormGroup;
   constructor(private fb: FormBuilder, private http: HttpClient) {
+    this.address = this.fb.group({
+      add: this.fb.array([this.fields()])
+    });
   }
 
-  address = this.fb.group({
-    add: this.fb.array([this.fields()])
-  });
+
 
   data = this.fb.group({
     username: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],

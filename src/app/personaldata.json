@@ -97,6 +97,34 @@
       "pincode": "50082",
       "state": "Telangana",
       "country": "India"
+    },
+    {
+      "id": "7",
+      "first": "Napoleon",
+      "last": "Dan",
+      "email": "napoleon@gmail.com",
+      "gender": "Male",
+      "phone": "1581941608",
+      "percentage": "50",
+      "street": "Cape Town",
+      "city": "Cape Town",
+      "pincode": "50032",
+      "state": "Cape Town",
+      "country": "South Africa"
+    },
+    {
+      "id": "8",
+      "first": "Nanny",
+      "last": "Daintree",
+      "email": "nanny@gmail.com",
+      "gender": "Male",
+      "phone": "6121632496",
+      "percentage": "60",
+      "street": "Rome",
+      "city": "Rome",
+      "pincode": "4002323",
+      "state": "Rome",
+      "country": "Italy"
     }
   ]
 }

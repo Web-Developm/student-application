@@ -27,6 +27,9 @@ export class DataComponent implements OnInit {
 
   personal1 = ["id", "first", "last", "email", "gender", "phone", "percentage", "street", "city", "pincode", "state", "country", "information"];
 
+  openState=false;
+
+
   datlist() {
     this.ds.personaldata().subscribe(
       data => {
@@ -42,8 +45,8 @@ export class DataComponent implements OnInit {
     console.log(this.ds.performance);
   }
 
-  onSelect(list: any) {
-    this.router.navigate(['/result', JSON.stringify(list)]);
+  onSelect(element: any) {
+    this.router.navigate(['/result', JSON.stringify(element)]);
   }
 
   filter(event: Event) {

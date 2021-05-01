@@ -2,7 +2,7 @@
   <form [formGroup]=form>
 
     <mat-form-field appearance="outline">
-      <mat-label>RollNumber</mat-label>
+      <mat-label>Enrollment Number</mat-label>
       <input matInput placeholder="id" formControlName="id" required>
       <mat-error *ngIf="form.controls['id'].invalid">{{getid()}}</mat-error>
     </mat-form-field>

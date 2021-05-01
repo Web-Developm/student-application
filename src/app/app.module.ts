@@ -22,6 +22,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 import { DataService } from '../app/data.service';
 import { InfoComponent } from './info/info.component';
@@ -64,7 +65,8 @@ import { ResultComponent } from './result/result.component';
     MatSelectModule,
     MatListModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatExpansionModule
   ],
   providers: [DataService,Structure1],
   bootstrap: [AppComponent],

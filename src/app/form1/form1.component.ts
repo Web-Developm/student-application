@@ -36,6 +36,19 @@ export class Form1Component implements OnInit {
 
   value3: any;
 
+  buttoncollection = [
+    {
+      value: "addPersonal"
+    },
+
+    {
+      value: "addPerformance"
+    },
+    {
+      value: "addaddress"
+    }
+  ]
+
 
   /*public submit1(_event: any) {
     this.value1 = _event;
@@ -62,7 +75,6 @@ export class Form1Component implements OnInit {
   private componentRef!: ComponentRef<any>;
 
   addPersonal() {
-
     let childComponent = this.resolver.resolveComponentFactory(PersonalComponent);
     this.componentRef = this.target.createComponent(childComponent);
   }

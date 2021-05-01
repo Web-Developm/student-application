@@ -1,6 +1,10 @@
 <div class="container top">
 
-  <button (click)="addPersonal()" mat-raised-button color="primary">ADD Personal</button>
+  <div *ngFor="let sample of buttoncollection">
+
+  </div>
+
+  <button (click)="addPersonal()" mat-raised-button color="primary">Add Personal</button>
 
   <button (click)="addPerformance()" mat-raised-button color="primary">Add Performance</button>
 
@@ -13,7 +17,7 @@
   <div class="row" #address></div>
 
   <div class="text-center">
-    <button (click)="addpersonaldata()" [disabled]="form.invalid" mat-raised-button color="primary">Submit</button>
+    <button (click)="addpersonaldata()" mat-raised-button color="primary">Submit</button>
   </div>
 
 </div>
