@@ -6,6 +6,8 @@ import { PerformanceComponent } from '../performance/performance.component';
 import { AddressComponent } from '../address/address.component';
 import { Structure1 } from '../structure1';
 import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
+import { ThisReceiver } from '@angular/compiler';
+import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 
 
 
@@ -13,11 +15,15 @@ import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
   selector: 'app-form1',
   templateUrl: './form1.component.html',
   styleUrls: ['./form1.component.css'],
-  providers: [DataService, Structure1]
+  providers: [DataService, Structure1],
 })
 export class Form1Component implements OnInit {
 
   store!: Structure1[];
+
+  index!: any;
+
+
 
 
 
@@ -32,7 +38,9 @@ export class Form1Component implements OnInit {
 
   public form2: FormGroup = this.ds.address;
 
-  public arrayControl = this.form2.get('add') as FormArray;
+
+
+  arrayControl1 = this.form2.get('add') as FormArray;
 
   value3: any;
 
@@ -72,11 +80,16 @@ export class Form1Component implements OnInit {
 
 
   @ViewChild('personal', { static: false, read: ViewContainerRef }) target!: ViewContainerRef;
-  private componentRef!: ComponentRef<any>;
+  public componentRef!: ComponentRef<any>;
+
+
+
 
   addPersonal() {
+
     let childComponent = this.resolver.resolveComponentFactory(PersonalComponent);
     this.componentRef = this.target.createComponent(childComponent);
+
   }
 
   @ViewChild('performance', { static: false, read: ViewContainerRef }) target1!: ViewContainerRef;
@@ -85,6 +98,7 @@ export class Form1Component implements OnInit {
   addPerformance() {
     let childComponent = this.resolver.resolveComponentFactory(PerformanceComponent);
     this.componentRef1 = this.target1.createComponent(childComponent);
+
   }
 
   @ViewChild('address', { static: false, read: ViewContainerRef }) target2!: ViewContainerRef;
@@ -110,11 +124,10 @@ export class Form1Component implements OnInit {
     temp.gender = this.form.controls['gender'].value;
     temp.phone = this.form.controls['phone'].value;
     temp.percentage = this.form1.controls['percentage'].value;
-    temp.street = this.arrayControl.at(0).get('street')?.value;
-    temp.city = this.arrayControl.at(0).get('city')?.value;
-    temp.pincode = this.arrayControl.at(0).get('pincode')?.value;
-    temp.state = this.arrayControl.at(0).get('state')?.value;
-    temp.country = this.arrayControl.at(0).get('country')?.value;
+    temp.address=  this.arrayControl1.value;
+    console.log(temp);
+
+
 
 
     this.ds.addpersonaldata(temp).subscribe(
@@ -140,6 +153,10 @@ export class Form1Component implements OnInit {
 
 
   ngOnInit(): void {
+    //this.addPersonal();
+    //this.addPerformance();
+    //this.addaddress();
+
   }
 
 }

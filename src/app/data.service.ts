@@ -10,7 +10,7 @@ import { Structure1 } from './structure1';
 export class DataService implements OnInit {
 
 
-address!:FormGroup;
+  address!: FormGroup;
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.address = this.fb.group({
       add: this.fb.array([this.fields()])
@@ -27,7 +27,7 @@ address!:FormGroup;
 
 
   personal = this.fb.group({
-    id: ['',[Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
+    id: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]],
     first: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     last: ['', [Validators.required, Validators.pattern('[a-zA-Z]*')]],
     email: ['', [Validators.required, Validators.email]],
@@ -35,15 +35,15 @@ address!:FormGroup;
     phone: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
   });
 
-  genderdetails=[
+  genderdetails = [
     {
-      value:'Male', viewValue:'Male'
+      value: 'Male', viewValue: 'Male'
     },
 
     {
-      value:'Female', viewValue:'Female'
+      value: 'Female', viewValue: 'Female'
     }
-]
+  ]
 
   performance = this.fb.group({
     percentage: ['', [Validators.required, Validators.pattern(/^-?(0|[1-9]\d*)?$/)]]
@@ -61,8 +61,9 @@ address!:FormGroup;
       pincode: [''],
       state: [''],
       country: ['']
-    })
+    });
   }
+
 
   add1() {
     this.add().push(this.fields());

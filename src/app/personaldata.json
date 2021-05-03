@@ -2,129 +2,53 @@
   "personaldata": [
     {
       "id": "0",
-      "first": "Ram",
-      "last": "Sundar",
-      "email": "ram@gmail.com",
-      "gender": "Male",
-      "phone": "123456789",
-      "percentage": "80",
-      "street": "Hyderabad",
-      "city": "Hyderabad",
-      "pincode": "500081",
-      "state": "Telangana",
-      "country": "India"
-    },
-    {
-      "id": "1",
-      "first": "Sankar",
-      "last": "Rao",
-      "email": "sankar@gmail.com",
-      "gender": "Male",
-      "phone": "123456789",
-      "percentage": "80",
-      "street": "Hyderabad",
-      "city": "Hyderabad",
-      "pincode": "500081",
-      "state": "Telangana",
-      "country": "India"
-    },
-    {
-      "id": "2",
-      "first": "Venkat",
-      "last": "Rao",
-      "email": "venkat@gmail.com",
-      "gender": "Male",
-      "phone": "123456789",
-      "percentage": "80",
-      "street": "Hyderabad",
-      "city": "Hyderabad",
-      "pincode": "500081",
-      "state": "Telangana",
-      "country": "India"
-    },
-    {
-      "id": "3",
-      "first": "Bill",
-      "last": "Ford",
-      "email": "venkat@gmail.com",
-      "gender": "Male",
-      "phone": "123456789",
-      "percentage": "80",
-      "street": "Hyderabad",
-      "city": "Hyderabad",
-      "pincode": "500081",
-      "state": "Telangana",
-      "country": "India"
-    },
-    {
-      "id": "4",
-      "first": "Santa",
-      "last": "Kumar",
-      "email": "santa@gmail.com",
-      "gender": "Male",
-      "phone": "123456789",
-      "percentage": "70",
-      "street": "Hyderabad",
-      "city": "Hyderabad",
-      "pincode": "50072",
-      "state": "Telangana",
-      "country": "India"
-    },
-    {
-      "id": "5",
       "first": "Ravi",
       "last": "Kumar",
       "email": "ravi@gmail.com",
       "gender": "Male",
-      "phone": "987654321",
-      "percentage": "60",
-      "street": "Rangareddy",
-      "city": "Rangareddy",
-      "pincode": "50073",
-      "state": "Telangana",
-      "country": "India"
+      "phone": "723823",
+      "percentage": "79",
+      "address": [
+        {
+          "street": "Hyderabad",
+          "city": "Hyderabad",
+          "pincode": "64376",
+          "state": "Telangana",
+          "country": "India"
+        },
+        {
+          "street": "Guntur",
+          "city": "Guntur",
+          "pincode": "2323",
+          "state": "Andhra Pradesh",
+          "country": "India"
+        }
+      ]
     },
     {
-      "id": "6",
-      "first": "Srinivas",
-      "last": "Rao",
-      "email": "srinivas@gmail.com",
+      "id": "1",
+      "first": "Rama",
+      "last": "Sundar",
+      "email": "rama@gmail.com",
       "gender": "Male",
-      "phone": "987654321",
-      "percentage": "90",
-      "street": "Sangareddy",
-      "city": "Sangareddy",
-      "pincode": "50082",
-      "state": "Telangana",
-      "country": "India"
-    },
-    {
-      "id": "7",
-      "first": "Napoleon",
-      "last": "Dan",
-      "email": "napoleon@gmail.com",
-      "gender": "Male",
-      "phone": "1581941608",
-      "percentage": "50",
-      "street": "Cape Town",
-      "city": "Cape Town",
-      "pincode": "50032",
-      "state": "Cape Town",
-      "country": "South Africa"
-    },
-    {
-      "id": "8",
-      "first": "Nanny",
-      "last": "Daintree",
-      "email": "nanny@gmail.com",
-      "gender": "Male",
-      "phone": "6121632496",
-      "percentage": "60",
-      "street": "Rome",
-      "city": "Rome",
-      "pincode": "4002323",
-      "state": "Rome",
-      "country": "Italy"
+      "phone": "263824",
+      "percentage": "80",
+      "address": [
+        {
+          "street": "London",
+          "city": "Lodon",
+          "pincode": "28638",
+          "state": "London",
+          "country": "UK"
+        },
+        {
+          "street": "Guntur",
+          "city": "Guntur",
+          "pincode": "232388",
+          "state": "Andhra Pradesh",
+          "country": "India"
+        }
+      ]
     }
   ]
 }

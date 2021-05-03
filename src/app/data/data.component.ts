@@ -10,12 +10,16 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 
 
+
+
 @Component({
   selector: 'app-data',
   templateUrl: './data.component.html',
-  styleUrls: ['./data.component.css']
+  styleUrls: ['./data.component.css'],
 })
 export class DataComponent implements OnInit {
+
+  expandedElement!: Structure1 | null;
 
   constructor(public ds: DataService, private route: ActivatedRoute, private router: Router) { }
 
@@ -25,9 +29,11 @@ export class DataComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
-  personal1 = ["id", "first", "last", "email", "gender", "phone", "percentage", "street", "city", "pincode", "state", "country", "information"];
+  personal1:string[] = ["id", "first", "last", "email", "gender", "phone", "percentage","address","information"];
 
-  openState=false;
+  openState = false;
+
+  addresstype=['Temporary Address','Perment Address'];
 
 
   datlist() {

@@ -5,10 +5,13 @@ export class Structure1 {
   email: any;
   gender: any;
   phone: any;
-  percentage:any;
-  street:any;
-  city:any;
-  pincode:any;
-  state:any;
-  country:any;
+  percentage: any;
+  address!: [{
+    street: string;
+    city: String;
+    pincode: String;
+    state: String;
+    country: String;
+  }];
 }
+

@@ -12,7 +12,7 @@ export class ResultComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
-  sample=['id','first','last','email','gender','phone','percentage','street','city','pincode','state','country'];
+  sample = ['id', 'first', 'last', 'email', 'gender', 'phone', 'percentage', 'address'];
 
   ngOnInit(): void {
     let id = this.route.params.subscribe((params: any) => {
