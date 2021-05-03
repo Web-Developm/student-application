@@ -1,0 +1,89 @@
+<div container="container">
+  <h1 class="text-center">Edit Profile</h1>
+  <form [formGroup]="personal">
+    <h2 class="mat-h2">Personal</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="first">
+      <mat-error *ngIf="personal.controls['first'].invalid">{{getfirst()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="last">
+      <mat-error *ngIf="personal.controls['last'].invalid">{{getlast()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email">
+      <mat-error *ngIf="personal.controls['email'].invalid">{{getemail()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Gender</mat-label>
+      <input matInput formControlName="gender">
+      <mat-error *ngIf="personal.controls['gender'].invalid">{{getgender()}}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phone">
+      <mat-error *ngIf="personal.controls['phone'].invalid">{{getphone()}}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div class="container">
+  <form [formGroup]="performance">
+    <h2 class="mat-h2">Performance</h2>
+    <mat-form-field appearance="outline">
+      <mat-label>Percentage</mat-label>
+      <input matInput formControlName="percentage">
+      <mat-error *ngIf="performance.controls['percentage'].invalid">{{getpercentage()}}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div class="container">
+  <form [formGroup]="address">
+    <h2 class="mat-h2">Address</h2>
+    <section formArrayName="add">
+      <section *ngFor="let list of arraycontrol.controls;let i=index">
+        <section [formGroupName]="i">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Street</mat-label>
+            <input matInput formControlName="street">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Pincode</mat-label>
+            <input matInput formControlName="pincode">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="state">
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Country</mat-label>
+            <input matInput formControlName="country">
+          </mat-form-field>
+        </section>
+      </section>
+    </section>
+  </form>
+</div>
+
+
+
+<div class="container text-center">
+  <button mat-stroked-button color="primary">Update</button>
+</div>

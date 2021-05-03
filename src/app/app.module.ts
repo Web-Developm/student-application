@@ -24,6 +24,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
+import {MatDialogModule} from '@angular/material/dialog';
 
 import { DataService } from '../app/data.service';
 import { InfoComponent } from './info/info.component';
@@ -34,6 +35,7 @@ import { AddressComponent } from './address/address.component';
 import { Structure1 } from './structure1';
 import { DataComponent } from './data/data.component';
 import { ResultComponent } from './result/result.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { ResultComponent } from './result/result.component';
     PerformanceComponent,
     AddressComponent,
     DataComponent,
-    ResultComponent
+    ResultComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ import { ResultComponent } from './result/result.component';
     MatSortModule,
     MatPaginatorModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [DataService, Structure1],
   bootstrap: [AppComponent],

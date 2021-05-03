@@ -1,12 +1,19 @@
+body{
+  background-color: #f8f5f1;
+  padding:30px;
+}
+
 table{
   width: 100%;
 }
 
 .example-card{
   width:1000px;
-  margin-left:250px;
+  margin-left:230px;
   margin-top:50px;
   margin-bottom:100px;
+  border-radius: 20px;
+  border-width: 30px;
 }
 
 p{
@@ -14,8 +21,9 @@ p{
 }
 
 .example-header-image{
-background-image: url('C:\Users\Satya\OneDrive\Documents\angular\Angular Material\student\src\assets\user-tie-solid.svg');
+background-image: url('C:\Users\Satya\OneDrive\Documents\angular\Angular Material\student\src\assets\user-regular.svg');
 background-size: cover;
+background-position: top;
 }
 
 .temporary{
@@ -23,5 +31,9 @@ background-size: cover;
 }
 
 .perment{
+  padding-top:50px;
+}
+
+.button{
   padding-top:50px;
 }

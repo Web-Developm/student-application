@@ -1,50 +1,59 @@
-<mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>{{resultinfo.first |uppercase}} {{resultinfo.last |uppercase}}</mat-card-title>
-    <mat-card-subtitle>{{resultinfo.address[0].state}}, {{resultinfo.address[1].country}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="assets\paris.jpg" width="400px" height="400px">
+<body>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{resultinfo.first |uppercase}} {{resultinfo.last |uppercase}}</mat-card-title>
+      <mat-card-subtitle>{{resultinfo.address[0].state}}, {{resultinfo.address[0].country}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="assets\chi-xiang-6CRF93kj-qI-unsplash.jpg" width="400px" height="400px">
 
-  <mat-card-content>
-    <div class="row">
-      <div class="col-sm-6">
-        <p>Email: {{resultinfo.email}}</p>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-sm-6">
+          <p><b>Email:</b> {{resultinfo.email}}</p>
+        </div>
+
+        <div class="col-sm-6">
+          <p><b>Gender:</b> {{resultinfo.gender}}</p>
+        </div>
       </div>
 
-      <div class="col-sm-6">
-        <p>Gender: {{resultinfo.gender}}</p>
+      <div class="row">
+        <div class="col-sm-6">
+          <p><b>Phone Number:</b> +91 {{resultinfo.phone}}</p>
+        </div>
+
+        <div class="col-sm-6">
+          <p><b>Percentage:</b> {{resultinfo.percentage}}</p>
+        </div>
       </div>
+
+      <div class="row">
+        <div class="col-sm-6 temporary">
+          <h2 class="mat-h2">Temporary Address:</h2>
+          <p>Street: {{resultinfo.address[0].street}}</p>
+          <p>City: {{resultinfo.address[0].city}}</p>
+          <p>Pincode: {{resultinfo.address[0].pincode}}</p>
+          <p>State: {{resultinfo.address[0].state}}</p>
+          <p>Country: {{resultinfo.address[0].country}}</p>
+        </div>
+
+        <div class="col-sm-6 perment">
+          <h2 class="mat-h2">Perment Address:</h2>
+          <p>Street: {{resultinfo.address[1].street}}</p>
+          <p>City: {{resultinfo.address[1].city}}</p>
+          <p>Pincode: {{resultinfo.address[1].pincode}}</p>
+          <p>State: {{resultinfo.address[1].state}}</p>
+          <p>Country: {{resultinfo.address[1].country}}</p>
+        </div>
+      </div>
+    </mat-card-content>
+
+    <div class="container text-center button">
+      <button (click)="openDialog()" mat-stroked-button color="primary">Edit</button>
     </div>
 
-    <div class="row">
-      <div class="col-sm-6">
-        <p>Phone Number: {{resultinfo.phone}}</p>
-      </div>
 
-      <div class="col-sm-6">
-        <p>Percentage: {{resultinfo.percentage}}</p>
-      </div>
-    </div>
+  </mat-card>
+</body>
 
-    <div class="row ">
-      <div class="col-sm-6 temporary">
-        <h2 class="mat-h2">Temporary Address:</h2>
-        <p>Street: {{resultinfo.address[0].street}}</p>
-        <p>City: {{resultinfo.address[0].city}}</p>
-        <p>Pincode: {{resultinfo.address[0].pincode}}</p>
-        <p>State: {{resultinfo.address[0].state}}</p>
-        <p>Country: {{resultinfo.address[0].country}}</p>
-      </div>
-
-      <div class="col-sm-6 perment">
-        <h2 class="mat-h2">Perment Address:</h2>
-        <p>Street: {{resultinfo.address[1].street}}</p>
-        <p>City: {{resultinfo.address[1].city}}</p>
-        <p>Pincode: {{resultinfo.address[1].pincode}}</p>
-        <p>State: {{resultinfo.address[1].state}}</p>
-        <p>Country: {{resultinfo.address[1].country}}</p>
-      </div>
-    </div>
-  </mat-card-content>
-</mat-card>

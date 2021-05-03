@@ -10,6 +10,9 @@ import { Structure1 } from './structure1';
 export class DataService implements OnInit {
 
 
+  url = "http://localhost:5555/personaldata";
+
+
   address!: FormGroup;
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.address = this.fb.group({
@@ -84,6 +87,10 @@ export class DataService implements OnInit {
 
   addpersonaldata(temp: Structure1): Observable<any> {
     return this.http.post("http://localhost:5555/personaldata", temp);
+  }
+
+  edit(primary: Structure1, id: number): Observable<any> {
+    return this.http.put(`${this.url}/${id}`, primary);
   }
 
   ngOnInit() {

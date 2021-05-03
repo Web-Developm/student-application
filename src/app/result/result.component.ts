@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DataService } from '../data.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-result',
@@ -8,11 +12,44 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ResultComponent implements OnInit {
 
-  public resultinfo!: any;
+  constructor(private route: ActivatedRoute, private router: Router, private ds: DataService, public dialog: MatDialog) { }
 
-  constructor(private route: ActivatedRoute, private router: Router) { }
+  store: any;
+
+  openDialog() {
+    this.dialog.open(DialogComponent, { height: '800px', width: '1000px' }).afterClosed().subscribe(
+      store => console.log(store)
+    );
+  }
+
+  public resultinfo: any;
+
+  personal: FormGroup = this.ds.personal;
+  performance: FormGroup = this.ds.performance;
+  address: FormGroup = this.ds.address;
+
+
 
   sample = ['id', 'first', 'last', 'email', 'gender', 'phone', 'percentage', 'address'];
+
+  display() {
+    this.ds.personaldata().subscribe(
+      data => {
+        this.store = data;
+        console.log(data);
+      }
+    )
+  }
+
+  update1(primary: any, index: any) {
+    this.personal.setValue({
+      first: primary.first,
+      last: primary.last,
+      email: primary.email,
+      gender: primary.gender,
+      phone: primary.phone,
+    })
+  }
 
   ngOnInit(): void {
     let id = this.route.params.subscribe((params: any) => {
