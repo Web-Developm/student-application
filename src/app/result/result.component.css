@@ -1,4 +1,4 @@
-body{
+.body{
   background-color: #f8f5f1;
   padding:30px;
 }
@@ -12,7 +12,7 @@ table{
   margin-left:230px;
   margin-top:50px;
   margin-bottom:100px;
-  border-radius: 20px;
+  border-radius: 10px;
   border-width: 30px;
 }
 
