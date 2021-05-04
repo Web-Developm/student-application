@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { FormArray, FormGroup } from '@angular/forms';
 
 
 
@@ -19,9 +22,16 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DataComponent implements OnInit {
 
+
+
   expandedElement!: Structure1 | null;
 
-  constructor(public ds: DataService, private route: ActivatedRoute, private router: Router) { }
+  constructor(public ds: DataService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog) { }
+
+  openDialog(primary: any, index: any) {
+    this.dialog.open(DialogComponent, { height: '800px', width: '1000px' });
+    this.update1(primary, index);
+  }
 
   public list = new MatTableDataSource<Structure1>();
 
@@ -29,11 +39,19 @@ export class DataComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
-  personal1:string[] = ["id", "first", "last", "email", "gender", "phone", "percentage","address","information"];
+  personal1: string[] = ["id", "first", "last", "email", "gender", "phone", "percentage", "address", "profile", "update","delete"];
 
   openState = false;
 
-  addresstype=['Temporary Address','Perment Address'];
+  addresstype = ['Temporary Address', 'Perment Address'];
+
+  personal: FormGroup = this.ds.personal;
+
+  performance: FormGroup = this.ds.performance;
+
+  address: FormGroup = this.ds.address;
+
+  addressarray = this.address.get('add') as FormArray;
 
 
   datlist() {
@@ -51,7 +69,7 @@ export class DataComponent implements OnInit {
     console.log(this.ds.performance);
   }
 
-  onSelect(element: any) {
+  onSelect(element:Structure1) {
     this.router.navigate(['/result', JSON.stringify(element)]);
   }
 
@@ -59,6 +77,37 @@ export class DataComponent implements OnInit {
     const filterValue: any = (event.target as HTMLInputElement).value;
     this.list.filter = filterValue.trim().toLowerCase();
   }
+
+  update1(primary: any, index: any) {
+    this.personal.setValue({
+      id: primary.id,
+      first: primary.first,
+      last: primary.last,
+      email: primary.email,
+      gender: primary.gender,
+      phone: primary.phone,
+    });
+  }
+
+  delete(index:any)
+  {
+    this.ds.delete(index).subscribe(
+      data=>{
+        console.log(data);
+        this.datlist();
+      }
+    )
+  }
+
+  add() {
+    this.ds.add1();
+  }
+
+  remove(index: any) {
+    this.ds.remove(index);
+  }
+
+
 
 
 

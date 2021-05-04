@@ -3,7 +3,9 @@
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
       <mat-card-title>{{resultinfo.first |uppercase}} {{resultinfo.last |uppercase}}</mat-card-title>
-      <mat-card-subtitle>{{resultinfo.address[0].state}}, {{resultinfo.address[0].country}}</mat-card-subtitle>
+      <mat-card-subtitle><i class="fas fa-fw fa-map-marker-alt"></i>
+        {{resultinfo.address[0].city}},{{resultinfo.address[0].state}},
+        {{resultinfo.address[0].country}} </mat-card-subtitle>
     </mat-card-header>
     <img mat-card-image src="assets\chi-xiang-6CRF93kj-qI-unsplash.jpg" width="400px" height="400px">
 
@@ -56,4 +58,3 @@
 
   </mat-card>
 </div>
-

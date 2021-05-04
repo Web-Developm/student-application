@@ -89,8 +89,12 @@ export class DataService implements OnInit {
     return this.http.post("http://localhost:5555/personaldata", temp);
   }
 
-  edit(primary: Structure1, id: number): Observable<any> {
+  edit(primary: Structure1, id: any): Observable<any> {
     return this.http.put(`${this.url}/${id}`, primary);
+  }
+
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
   }
 
   ngOnInit() {
