@@ -102,6 +102,9 @@ export class DialogComponent implements OnInit {
   }
 
   update2() {
+
+
+
     let primary = new Structure1();
 
     primary.id = this.personal.controls['id'].value;
@@ -131,8 +134,6 @@ export class DialogComponent implements OnInit {
 
     console.log('datanshoumn', this.data);
 
-
-
     this.personal.patchValue({
       id: this.data.id,
       first: this.data.first,
@@ -145,7 +146,6 @@ export class DialogComponent implements OnInit {
     this.performance.patchValue({
       percentage: this.data.percentage
     });
-
 
     this.addressarray.controls.forEach((element: any, index: any, array: any) => {
 
@@ -160,26 +160,10 @@ export class DialogComponent implements OnInit {
             country: val.country
           });
 
-
-
-
       })
 
     });
 
-
-
-
-
-
-
-    this.address.patchValue([{
-      street: this.data.street,
-      city: this.data.city,
-      pincode: this.data.pincode,
-      state: this.data.state,
-      country: this.data.country
-    }])
 
 
 

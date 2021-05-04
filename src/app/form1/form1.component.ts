@@ -115,8 +115,8 @@ export class Form1Component implements OnInit {
 
   addpersonaldata() {
     let index: any;
-
     let temp = new Structure1();
+
     temp.id = this.form.controls['id'].value;
     temp.first = this.form.controls['first'].value;
     temp.last = this.form.controls['last'].value;
@@ -140,7 +140,6 @@ export class Form1Component implements OnInit {
     this.form.reset();
     this.form1.reset();
     this.form2.reset();
-
   }
 
 
@@ -152,10 +151,9 @@ export class Form1Component implements OnInit {
 
 
 
+
+
   ngOnInit(): void {
-    //this.addPersonal();
-    //this.addPerformance();
-    //this.addaddress();
 
   }
 

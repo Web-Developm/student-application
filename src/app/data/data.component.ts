@@ -48,11 +48,10 @@ export class DataComponent implements OnInit {
 
   address: FormGroup = this.ds.address;
 
-  addressarray = this.address.get('add') as FormArray;
+  addressarray: FormArray = this.address.get('add') as FormArray;
 
   openDialog(primary: any, index: any) {
     this.dialog.open(DialogComponent, { data: primary, height: '650px', width: '600px' });
-    this.update1(primary, index);
   }
 
 
@@ -80,7 +79,7 @@ export class DataComponent implements OnInit {
     this.list.filter = filterValue.trim().toLowerCase();
   }
 
-  update1(primary: any, index: any) {
+  /*update1(primary: any, index: any) {
 
     this.data.patchValue({
       id: primary.id,
@@ -95,16 +94,20 @@ export class DataComponent implements OnInit {
       percentage: primary.percentage
     });
 
-    this.addressarray.patchValue(
-      [{
-        street: primary.street,
-        city: primary.city,
-        pincode: primary.pincode,
-        state: primary.state,
-        country: primary.country
-      }]
-    );
-  }
+    this.addressarray.controls.forEach((element:any,index:any,array:any)=>{
+      this.list.address.forEach((element:any,i:number)=>{
+        this.addressarray.at(i).patchValue({
+          city:element.city,
+          street:element.street,
+          pincode:element.pincode,
+          state:element.state,
+          country:element.country
+        })
+      })
+    })
+
+
+  }*/
 
 
 

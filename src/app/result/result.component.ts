@@ -15,7 +15,7 @@ export class ResultComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router: Router, private ds: DataService, public dialog: MatDialog) { }
 
-  store: any;
+  store!: Structure1[];
 
   openDialog() {
     this.dialog.open(DialogComponent, { height: '800px', width: '1000px' }).afterClosed().subscribe(
@@ -26,7 +26,7 @@ export class ResultComponent implements OnInit {
     }
   }
 
-  public resultinfo: any;
+  public resultinfo:any;
 
   personal: FormGroup = this.ds.personal;
   performance: FormGroup = this.ds.performance;

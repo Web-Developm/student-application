@@ -156,6 +156,31 @@
           "country": "India"
         }
       ]
+    },
+    {
+      "id": "6",
+      "first": "Steve",
+      "last": "Smith",
+      "email": "steve@gmail.com",
+      "gender": "Male",
+      "phone": "83948989",
+      "percentage": "60",
+      "address": [
+        {
+          "street": "Chennai",
+          "city": "Chennai",
+          "pincode": "384394",
+          "state": "Tamil Nadu",
+          "country": "India"
+        },
+        {
+          "street": "Sydney",
+          "city": "Sydney",
+          "pincode": "28748237",
+          "state": "Sydney",
+          "country": "Australia"
+        }
+      ]
     }
   ]
 }
