@@ -100,6 +100,7 @@ export class DataService implements OnInit {
   ngOnInit() {
     this.data;
     this.personal;
+    this.performance;
     console.log(this.address);
   }
 

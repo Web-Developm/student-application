@@ -1,49 +1,54 @@
 <div class="container">
-  <form [formGroup]="group">
-    <section formArrayName="add">
-      <section *ngFor="let add1 of  fields.controls;let i=index">
-        <section [formGroupName]="i">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]="group">
+        <section formArrayName="add">
+          <section *ngFor="let add1 of  fields.controls;let i=index">
+            <section [formGroupName]="i">
 
-          <section *ngIf="i<2">
-            <div class="button">
-              <button (click)="add()" mat-raised-button color="primary">Add</button>
-              <button (click)="delete(i)" mat-raised-button color="primary" name="delete">Delete</button>
-            </div>
+              <section *ngIf="i<2">
+                <div class="button">
+                  <button (click)="add()" mat-raised-button color="primary">Add</button>
+                  <button (click)="delete(i)" mat-raised-button color="primary" name="delete">Delete</button>
+                </div>
 
 
 
-            <mat-form-field appearance="outline">
-              <mat-label>Street</mat-label>
-              <input matInput placeholder="street" formControlName="street">
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Street</mat-label>
+                  <input matInput placeholder="street" formControlName="street">
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>City</mat-label>
-              <input matInput placeholder="city" formControlName="city">
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>City</mat-label>
+                  <input matInput placeholder="city" formControlName="city">
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>Pincode</mat-label>
-              <input matInput placeholder="pincode" formControlName="pincode">
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Pincode</mat-label>
+                  <input matInput placeholder="pincode" formControlName="pincode">
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>State</mat-label>
-              <input matInput placeholder="state" formControlName="state">
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>State</mat-label>
+                  <input matInput placeholder="state" formControlName="state">
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-              <mat-label>Country</mat-label>
-              <input matInput placeholder="country" formControlName="country">
-            </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Country</mat-label>
+                  <input matInput placeholder="country" formControlName="country">
+                </mat-form-field>
+              </section>
+
+
+
+            </section>
           </section>
-
-
-
         </section>
-      </section>
-    </section>
-  </form>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
 
   <!--<div class="text-center">
     <button (click)="print()" mat-raised-button color="primary">Submit</button>

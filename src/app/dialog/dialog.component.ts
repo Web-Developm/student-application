@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormArray, Validators } from '@angular/forms';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DataService } from '../data.service';
 import { Structure1 } from '../structure1';
 
@@ -42,6 +42,14 @@ export class DialogComponent implements OnInit {
 
   remove(index: any) {
     this.ds.remove(index);
+  }
+
+  getid() {
+    if (this.personal.controls['id'].hasError('required')) {
+      return "Id required";
+    }
+
+    return this.personal.controls['id'].hasError('pattern') ? "Not a valid id" : " ";
   }
 
   getfirst() {
@@ -93,6 +101,28 @@ export class DialogComponent implements OnInit {
     return this.performance.controls['percentage'].hasError('pattern') ? "Not a valid percentage" : " ";
   }
 
+  update2() {
+    let primary = new Structure1();
+
+    primary.id = this.personal.controls['id'].value;
+    primary.first = this.personal.controls['first'].value;
+    primary.last = this.personal.controls['last'].value;
+    primary.email = this.personal.controls['email'].value;
+    primary.gender = this.personal.controls['gender'].value;
+    primary.phone = this.personal.controls['phone'].value;
+    primary.percentage = this.performance.controls['percentage'].value;
+    primary.address = this.addressarray.value;
+
+    let id = Number(primary.id);
+
+    this.ds.edit(primary, id).subscribe(
+      data => {
+        alert("Successfully updated");
+      }
+    )
+
+  }
+
 
 
 
@@ -101,7 +131,59 @@ export class DialogComponent implements OnInit {
 
     console.log('datanshoumn', this.data);
 
-    this.personal.patchValue({ name: this.data.first })
+
+
+    this.personal.patchValue({
+      id: this.data.id,
+      first: this.data.first,
+      last: this.data.last,
+      email: this.data.email,
+      gender: this.data.gender,
+      phone: this.data.phone
+    });
+
+    this.performance.patchValue({
+      percentage: this.data.percentage
+    });
+
+
+    this.addressarray.controls.forEach((element: any, index: any, array: any) => {
+
+      this.data.address.forEach((val: any, i: number) => {
+        this.add();
+        this.addressarray.at(i).patchValue(
+          {
+            city: val.city,
+            street: val.street,
+            pincode: val.pincode,
+            state: val.state,
+            country: val.country
+          });
+
+
+
+
+      })
+
+    });
+
+
+
+
+
+
+
+    this.address.patchValue([{
+      street: this.data.street,
+      city: this.data.city,
+      pincode: this.data.pincode,
+      state: this.data.state,
+      country: this.data.country
+    }])
+
+
+
+
   }
 
 }

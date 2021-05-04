@@ -51,7 +51,7 @@ export class DataComponent implements OnInit {
   addressarray = this.address.get('add') as FormArray;
 
   openDialog(primary: any, index: any) {
-    this.dialog.open(DialogComponent, { data: primary, height: '600px', width: '600px' });
+    this.dialog.open(DialogComponent, { data: primary, height: '650px', width: '600px' });
     this.update1(primary, index);
   }
 
@@ -81,6 +81,7 @@ export class DataComponent implements OnInit {
   }
 
   update1(primary: any, index: any) {
+
     this.data.patchValue({
       id: primary.id,
       first: primary.first,
@@ -108,12 +109,21 @@ export class DataComponent implements OnInit {
 
 
   delete(index: any) {
-    this.ds.delete(index).subscribe(
-      data => {
-        console.log(data);
-        this.datlist();
-      }
-    )
+    let res = confirm("are you sure delete the record");
+
+    if (res == true) {
+      this.ds.delete(index).subscribe(
+        data => {
+          console.log(data);
+          this.datlist();
+        }
+      )
+    }
+
+    else {
+      alert("record aborted");
+    }
+
   }
 
   add() {

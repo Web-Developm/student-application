@@ -16,47 +16,47 @@
     <input matInput (keyup)="filter($event)">
   </mat-form-field>
 
-  <mat-paginator [pageSizeOptions]="[10,20]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[3,5,7]" showFirstLastButtons></mat-paginator>
 
   <table mat-table [dataSource]="list" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="id" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+      <td mat-cell *matCellDef="let element;let i=index">{{element.id}}</td>
     </ng-container>
     <ng-container matColumnDef="first" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
-      <td mat-cell *matCellDef="let element">{{element.first | uppercase}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.first | uppercase}}</td>
     </ng-container>
 
     <ng-container matColumnDef="last" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
-      <td mat-cell *matCellDef="let element">{{element.last | uppercase}}</td>
+      <td mat-cell *matCellDef="let element;let i=index">{{element.last | uppercase}}</td>
     </ng-container>
 
     <ng-container matColumnDef="email" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-      <td mat-cell *matCellDef="let element">{{element.email}}</td>
+      <td mat-cell *matCellDef="let element;let i=index">{{element.email}}</td>
     </ng-container>
 
 
     <ng-container matColumnDef="gender" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
-      <td mat-cell *matCellDef="let element">{{element.gender}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.gender}}</td>
     </ng-container>
 
     <ng-container matColumnDef="phone" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
-      <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.phone}}</td>
     </ng-container>
 
     <ng-container matColumnDef="percentage" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Percentage</th>
-      <td mat-cell *matCellDef="let element">{{element.percentage}}</td>
+      <td mat-cell *matCellDef="let element; let i=index">{{element.percentage}}</td>
     </ng-container>
 
     <ng-container matColumnDef="address" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element; let i=index">
         <div class="address">
           <ng-container *ngFor="let address1 of element.address; let i=index">
             <div class="addresslist">
@@ -81,7 +81,7 @@
 
     <ng-container matColumnDef="update" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Update</th>
-      <td mat-cell *matCellDef="let element; let i=index"><button (click)="openDialog(element,i)" mat-button><i
+      <td mat-cell *matCellDef="let element; let i=index"><button mat-button (click)="openDialog(element,i)"><i
             class="far fa-1x fa-edit"></i></button></td>
     </ng-container>
 
@@ -96,3 +96,170 @@
   </table>
 
 </div>
+
+<!--<mat-form-field class="example" appearance="outline">
+  <mat-label>Search</mat-label>
+  <input matInput (keyup)="filter($event)">
+</mat-form-field>
+
+<mat-paginator [pageSizeOptions]="[2,4,6]" showFirstLastButtons></mat-paginator>
+
+
+<mat-accordion>
+  <table mat-table [dataSource]="list" matSort class="mat-elevation-z8">
+
+    <mat-expansion-panel (opened)="openState = true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <mat-panel-title>
+          <ng-container matColumnDef="id" class="example">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+            <td mat-cell *matCellDef="let element">{{element.id}}</td>
+          </ng-container>
+        </mat-panel-title>
+
+        <mat-panel-description>
+
+          iwiwhdkwhreiwhewih
+
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+      <p>satawwijdewidwkdjskdjk</p>
+    </mat-expansion-panel>
+
+
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="first" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
+          <td mat-cell *matCellDef="let element">{{element.first | uppercase}}</td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="last" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
+          <td mat-cell *matCellDef="let element">{{element.last | uppercase}}</td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="email" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          <td mat-cell *matCellDef="let element">{{element.email}}</td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="gender" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
+          <td mat-cell *matCellDef="let element">{{element.gender}}</td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="phone" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+          <td mat-cell *matCellDef="let element">{{element.phone}}</td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="percentage" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Percentage</th>
+          <td mat-cell *matCellDef="let element">{{element.percentage}}</td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="address" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+          <td mat-cell *matCellDef="let element">
+            <div class="address">
+              <ng-container *ngFor="let address1 of element.address; let i=index">
+                <div class="addresslist">
+                  <mat-list dense>
+                    <mat-list-item [ngStyle]="{'text-decoration':'underline'}" role="listitem">{{addresstype[i] |
+                      uppercase}}</mat-list-item>
+                    <mat-list-item role="listitem">{{address1.street}},{{address1.city}}</mat-list-item>
+                    <mat-list-item role="listitem">{{address1.pincode}},{{address1.state}}</mat-list-item>
+                    <mat-list-item role="listitem">{{address1.country}}</mat-list-item>
+                  </mat-list>
+                </div>
+              </ng-container>
+            </div>
+          </td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="profile" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Profile</th>
+          <td mat-cell *matCellDef="let element; let i=index"><button mat-button (click)="onSelect(element)"><i
+                class="far fa-1x fa-user-circle"></i></button></td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="update" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Update</th>
+          <td mat-cell *matCellDef="let element; let i=index"><button (click)="openDialog(element,i)" mat-button><i
+                class="far fa-1x fa-edit"></i></button></td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="openState =true" (closed)="openState =false">
+      <mat-expansion-panel-header>
+
+        <ng-container matColumnDef="delete" class="example">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
+          <td mat-cell *matCellDef="let element; let i=index"><button (click)="delete(i)" mat-button><i
+                class="far fa-1x fa-trash-alt"></i></button></td>
+        </ng-container>
+
+      </mat-expansion-panel-header>
+    </mat-expansion-panel>
+
+    <tr mat-header-row *matHeaderRowDef="personal1"></tr>
+    <tr mat-row *matRowDef="let row; columns:personal1"></tr>
+
+
+  </table>
+</mat-accordion>-->
