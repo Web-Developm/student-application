@@ -28,10 +28,7 @@ export class DataComponent implements OnInit {
 
   constructor(public ds: DataService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog) { }
 
-  openDialog(primary: any, index: any) {
-    this.dialog.open(DialogComponent, { height: '800px', width: '1000px' });
-    this.update1(primary, index);
-  }
+
 
   public list = new MatTableDataSource<Structure1>();
 
@@ -39,19 +36,24 @@ export class DataComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: true }) paginator!: MatPaginator;
 
-  personal1: string[] = ["id", "first", "last", "email", "gender", "phone", "percentage", "address", "profile", "update","delete"];
+  personal1: string[] = ["id", "first", "last", "email", "gender", "phone", "percentage", "address", "profile", "update", "delete"];
 
   openState = false;
 
   addresstype = ['Temporary Address', 'Perment Address'];
 
-  personal: FormGroup = this.ds.personal;
+  data: FormGroup = this.ds.personal;
 
   performance: FormGroup = this.ds.performance;
 
   address: FormGroup = this.ds.address;
 
   addressarray = this.address.get('add') as FormArray;
+
+  openDialog(primary: any, index: any) {
+    this.dialog.open(DialogComponent, { data: primary, height: '600px', width: '600px' });
+    this.update1(primary, index);
+  }
 
 
   datlist() {
@@ -69,7 +71,7 @@ export class DataComponent implements OnInit {
     console.log(this.ds.performance);
   }
 
-  onSelect(element:Structure1) {
+  onSelect(element: Structure1) {
     this.router.navigate(['/result', JSON.stringify(element)]);
   }
 
@@ -79,7 +81,7 @@ export class DataComponent implements OnInit {
   }
 
   update1(primary: any, index: any) {
-    this.personal.setValue({
+    this.data.patchValue({
       id: primary.id,
       first: primary.first,
       last: primary.last,
@@ -87,12 +89,27 @@ export class DataComponent implements OnInit {
       gender: primary.gender,
       phone: primary.phone,
     });
+
+    this.performance.patchValue({
+      percentage: primary.percentage
+    });
+
+    this.addressarray.patchValue(
+      [{
+        street: primary.street,
+        city: primary.city,
+        pincode: primary.pincode,
+        state: primary.state,
+        country: primary.country
+      }]
+    );
   }
 
-  delete(index:any)
-  {
+
+
+  delete(index: any) {
     this.ds.delete(index).subscribe(
-      data=>{
+      data => {
         console.log(data);
         this.datlist();
       }

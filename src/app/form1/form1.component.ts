@@ -124,7 +124,7 @@ export class Form1Component implements OnInit {
     temp.gender = this.form.controls['gender'].value;
     temp.phone = this.form.controls['phone'].value;
     temp.percentage = this.form1.controls['percentage'].value;
-    temp.address=  this.arrayControl1.value;
+    temp.address = this.arrayControl1.value;
     console.log(temp);
 
 

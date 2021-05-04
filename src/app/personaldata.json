@@ -49,6 +49,106 @@
           "country": "India"
         }
       ]
+    },
+    {
+      "id": "2",
+      "first": "Sasi",
+      "last": "Kant",
+      "email": "sasi@gmail.com",
+      "gender": "Male",
+      "phone": "343434",
+      "percentage": "60",
+      "address": [
+        {
+          "street": "Hyderabad",
+          "city": "Hyderabad",
+          "pincode": "734384",
+          "state": "Telangana",
+          "country": "India"
+        },
+        {
+          "street": "Mumbai",
+          "city": "Mumbai",
+          "pincode": "3742847",
+          "state": "Maharashtra",
+          "country": "India"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "first": "Ram",
+      "last": "Nathan",
+      "email": "ram@gmail.com",
+      "gender": "Male",
+      "phone": "2748284",
+      "percentage": "80",
+      "address": [
+        {
+          "street": "Hyderabad",
+          "city": "Hyderabad",
+          "pincode": "273249",
+          "state": "Telangana",
+          "country": "India"
+        },
+        {
+          "street": "Chennai",
+          "city": "Chennai",
+          "pincode": "27482748",
+          "state": "Tamil Nadu",
+          "country": "India"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "first": "Karl",
+      "last": "Kumar",
+      "email": "karl@gmail.com",
+      "gender": "Male",
+      "phone": "273827323",
+      "percentage": "50",
+      "address": [
+        {
+          "street": "Hyderabad",
+          "city": "Hyderabad",
+          "pincode": "8273283",
+          "state": "Telangana",
+          "country": "India"
+        },
+        {
+          "street": "London",
+          "city": "London",
+          "pincode": "283283",
+          "state": "London",
+          "country": "UK"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "first": "Santa",
+      "last": "Kumar",
+      "email": "santa@gmail.com",
+      "gender": "Male",
+      "phone": "264848289",
+      "percentage": "70",
+      "address": [
+        {
+          "street": "Hyderabad",
+          "city": "Hyderabad",
+          "pincode": "273283",
+          "state": "Telangana",
+          "country": "India"
+        },
+        {
+          "street": "Chennai",
+          "city": "Chennai",
+          "pincode": "232973",
+          "state": "Tamil Nadu",
+          "country": "India"
+        }
+      ]
     }
   ]
 }

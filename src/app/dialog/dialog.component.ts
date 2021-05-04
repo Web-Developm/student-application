@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormArray, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DataService } from '../data.service';
+import { Structure1 } from '../structure1';
 
 @Component({
   selector: 'app-dialog',
@@ -9,7 +11,10 @@ import { DataService } from '../data.service';
 })
 export class DialogComponent implements OnInit {
 
-  constructor(private ds: DataService) { }
+  constructor(
+    private ds: DataService,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
   personal: FormGroup = this.ds.personal;
 
@@ -17,7 +22,19 @@ export class DialogComponent implements OnInit {
 
   address: FormGroup = this.ds.address;
 
-  arraycontrol = this.address.get('add') as FormArray;
+  addressarray: FormArray = this.address.get('add') as FormArray;
+
+  list!: Structure1[];
+
+
+  display() {
+    this.ds.personaldata().subscribe(
+      data => {
+        this.list = data;
+        console.log(data);
+      }
+    )
+  }
 
   add() {
     this.ds.add1();
@@ -80,6 +97,11 @@ export class DialogComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.display();
+
+    console.log('datanshoumn', this.data);
+
+    this.personal.patchValue({ name: this.data.first })
   }
 
 }
