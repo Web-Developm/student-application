@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, ComponentFactoryResolver, OnDestroy } from '@angular/core';
 import { DataService } from '../data.service';
 import { FormControl, FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { PersonalComponent } from '../personal/personal.component';
@@ -17,7 +17,7 @@ import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./form1.component.css'],
   providers: [DataService, Structure1],
 })
-export class Form1Component implements OnInit {
+export class Form1Component implements OnInit, OnDestroy {
 
   store!: Structure1[];
 
@@ -83,12 +83,11 @@ export class Form1Component implements OnInit {
   public componentRef!: ComponentRef<any>;
 
 
-
-
   addPersonal() {
 
-    let childComponent = this.resolver.resolveComponentFactory(PersonalComponent);
+    let childComponent:any = this.resolver.resolveComponentFactory(PersonalComponent);
     this.componentRef = this.target.createComponent(childComponent);
+    childComponent.destroy;
 
   }
 
@@ -154,6 +153,14 @@ export class Form1Component implements OnInit {
 
 
   ngOnInit(): void {
+
+
+  }
+
+  ngOnDestroy() {
+    this.componentRef.destroy();
+    this.componentRef1.destroy();
+    this.componentRef2.destroy();
 
   }
 

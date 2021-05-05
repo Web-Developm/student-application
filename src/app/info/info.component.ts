@@ -49,7 +49,7 @@ export class InfoComponent implements OnInit {
 
 
 
-    for (let i = 0; i <this.store.length; i++) {
+    for (let i = 0; i <= this.store.length; i++) {
 
       let user1 = this.store[i].username;
 
@@ -62,13 +62,13 @@ export class InfoComponent implements OnInit {
         break;
       }
 
-      else if (user1 != this.data.controls['username'].value && pass == this.store[i].password) {
+      else if (this.data.controls['username'].value != user1 && this.data.controls['password'].value == pass) {
         alert("Invalid username");
         this.data.reset();
         break;
       }
 
-      else if (user1 == this.data.controls['username'].value && pass != this.store[i].password) {
+      else if (this.data.controls['username'].value == user1 && this.data.controls['username'].value != pass) {
         alert("Invalid password");
         this.data.reset();
         break;

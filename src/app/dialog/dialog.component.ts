@@ -160,7 +160,7 @@ export class DialogComponent implements OnInit {
             country: val.country
           });
 
-      })
+      });
 
     });
 
