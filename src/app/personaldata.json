@@ -168,6 +168,13 @@
           "pincode": "232973",
           "state": "Tamil Nadu",
           "country": "India"
+        },
+        {
+          "street": "",
+          "city": "",
+          "pincode": "",
+          "state": "",
+          "country": ""
         }
       ]
     },
@@ -193,6 +200,13 @@
           "pincode": "28748237",
           "state": "Sydney",
           "country": "Australia"
+        },
+        {
+          "street": "",
+          "city": "",
+          "pincode": "",
+          "state": "",
+          "country": ""
         }
       ]
     },
@@ -203,7 +217,7 @@
       "email": "colin@gmail.com",
       "gender": "Male",
       "phone": "343434",
-      "percentage": "40",
+      "percentage": "24",
       "address": [
         {
           "street": "",

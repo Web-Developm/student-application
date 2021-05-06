@@ -8,6 +8,7 @@ import { Structure1 } from '../structure1';
 //import { HttpResponse, HttpHeaders, HttpClient } from '@angular/common/http';
 //import { ThisReceiver } from '@angular/compiler';
 //import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
+import { Router } from '@angular/router';
 
 
 
@@ -27,7 +28,7 @@ export class Form1Component implements OnInit, OnDestroy {
 
 
 
-  constructor(private ds: DataService, private resolver: ComponentFactoryResolver) { }
+  constructor(private ds: DataService, private resolver: ComponentFactoryResolver, private route:Router) { }
 
 
   public form: FormGroup = this.ds.personal;
@@ -139,6 +140,7 @@ export class Form1Component implements OnInit, OnDestroy {
     this.form.reset();
     this.form1.reset();
     this.form2.reset();
+    this.route.navigate(['/data']);
   }
 
 
