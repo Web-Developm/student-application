@@ -1,107 +1,7 @@
 {
   "personaldata": [
     {
-      "id": "0",
-      "first": "Ravi",
-      "last": "Kumar",
-      "email": "ravi@gmail.com",
-      "gender": "Male",
-      "phone": "723823",
-      "percentage": "80",
-      "address": [
-        {
-          "street": "Hyderabad",
-          "city": "Hyderabad",
-          "pincode": "64376",
-          "state": "Telangana",
-          "country": "India"
-        },
-        {
-          "street": "Guntur",
-          "city": "Guntur",
-          "pincode": "2323",
-          "state": "Andhra Pradesh",
-          "country": "India"
-        }
-      ]
-    },
-    {
-      "id": "1",
-      "first": "Rama",
-      "last": "Sundar",
-      "email": "rama@gmail.com",
-      "gender": "Male",
-      "phone": "263824",
-      "percentage": "80",
-      "address": [
-        {
-          "street": "London",
-          "city": "Lodon",
-          "pincode": "28638",
-          "state": "London",
-          "country": "UK"
-        },
-        {
-          "street": "Guntur",
-          "city": "Guntur",
-          "pincode": "232388",
-          "state": "Andhra Pradesh",
-          "country": "India"
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "first": "Sasi",
-      "last": "Kant",
-      "email": "sasi@gmail.com",
-      "gender": "Male",
-      "phone": "343434",
-      "percentage": "60",
-      "address": [
-        {
-          "street": "Hyderabad",
-          "city": "Hyderabad",
-          "pincode": "734384",
-          "state": "Telangana",
-          "country": "India"
-        },
-        {
-          "street": "Mumbai",
-          "city": "Mumbai",
-          "pincode": "3742847",
-          "state": "Maharashtra",
-          "country": "India"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "first": "Ram",
-      "last": "Nathan",
-      "email": "ram@gmail.com",
-      "gender": "Male",
-      "phone": "2748284",
-      "percentage": "80",
-      "address": [
-        {
-          "street": "Hyderabad",
-          "city": "Hyderabad",
-          "pincode": "273249",
-          "state": "Telangana",
-          "country": "India"
-        },
-        {
-          "street": "Chennai",
-          "city": "Chennai",
-          "pincode": "27482748",
-          "state": "Tamil Nadu",
-          "country": "India"
-        }
-      ]
-    },
-    {
-      "id": "4",
+      "id": "5",
       "first": "Karl",
       "last": "Kumar",
       "email": "karl@gmail.com",
@@ -126,32 +26,7 @@
       ]
     },
     {
-      "id": "5",
-      "first": "Santa",
-      "last": "Kumar",
-      "email": "santa@gmail.com",
-      "gender": "Male",
-      "phone": "264848289",
-      "percentage": "70",
-      "address": [
-        {
-          "street": "Hyderabad",
-          "city": "Hyderabad",
-          "pincode": "273283",
-          "state": "Telangana",
-          "country": "India"
-        },
-        {
-          "street": "Chennai",
-          "city": "Chennai",
-          "pincode": "232973",
-          "state": "Tamil Nadu",
-          "country": "India"
-        }
-      ]
-    },
-    {
-      "id": "6",
+      "id": "7",
       "first": "Steve",
       "last": "Smith",
       "email": "steve@gmail.com",

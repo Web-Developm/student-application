@@ -2,9 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from '../data.service';
 import { Structure1 } from '../structure1';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { map } from 'rxjs/operators';
-import { NavigationExtras } from "@angular/router";
-import { Observable } from 'rxjs';
+//import { map } from 'rxjs/operators';
+//import { NavigationExtras } from "@angular/router";
+//import { Observable } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
@@ -111,14 +111,14 @@ export class DataComponent implements OnInit {
 
 
 
-  delete(index: any) {
+  delete(id: any): void {
     let res = confirm("are you sure delete the record");
 
     if (res == true) {
-      this.ds.delete(index).subscribe(
+      this.ds.delete(id).subscribe(
         data => {
+          console.log("Successfully delete the record");
           console.log(data);
-          this.datlist();
         }
       )
     }
@@ -128,6 +128,8 @@ export class DataComponent implements OnInit {
     }
 
   }
+
+
 
   add() {
     this.ds.add1();

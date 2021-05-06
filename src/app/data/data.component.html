@@ -16,7 +16,7 @@
     <input matInput (keyup)="filter($event)">
   </mat-form-field>
 
-  <mat-paginator [pageSizeOptions]="[2,4,6]" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[10,20,30]" showFirstLastButtons></mat-paginator>
 
   <table mat-table [dataSource]="list" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="id" class="example">
@@ -87,7 +87,7 @@
 
     <ng-container matColumnDef="delete" class="example">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Delete</th>
-      <td mat-cell *matCellDef="let element; let i=index"><button (click)="delete(i)" mat-button><i
+      <td mat-cell *matCellDef="let element; let i=index"><button (click)="delete(element.id)" mat-button><i
             class="far fa-1x fa-trash-alt"></i></button></td>
     </ng-container>
 

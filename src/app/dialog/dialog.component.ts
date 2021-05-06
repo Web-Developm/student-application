@@ -150,15 +150,15 @@ export class DialogComponent implements OnInit {
     this.addressarray.controls.forEach((element: any, index: any, array: any) => {
 
       this.data.address.forEach((val: any, i: number) => {
-        this.add();
-        this.addressarray.at(i).patchValue(
-          {
-            city: val.city,
-            street: val.street,
-            pincode: val.pincode,
-            state: val.state,
-            country: val.country
-          });
+          this.add();
+          this.addressarray.at(i).patchValue(
+            {
+              city: val.city,
+              street: val.street,
+              pincode: val.pincode,
+              state: val.state,
+              country: val.country
+            });
 
       });
 

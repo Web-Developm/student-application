@@ -15,6 +15,7 @@ export class InfoComponent implements OnInit {
   store: any;
 
   public data: FormGroup = this.ds.data;
+
   hide = true;
 
   getusername() {
@@ -51,34 +52,26 @@ export class InfoComponent implements OnInit {
 
     for (let i = 0; i <= this.store.length; i++) {
 
-      let user1 = this.store[i].username;
+      let user1 = this.data.controls['username'].value;
 
-      let pass = this.store[i].password;
+      let pass = this.data.controls['password'].value;
 
-      if (this.data.controls['username'].value == user1 && this.data.controls['password'].value == pass) {
+
+
+      if (this.data.controls['username'].value == this.store[i].username &&  this.data.controls['password'].value == this.store[i].password) {
         alert("Login successfull");
         this.route.navigate(['/data']);
         this.data.reset();
-        break;
-      }
-
-      else if (this.data.controls['username'].value != user1 && this.data.controls['password'].value == pass) {
-        alert("Invalid username");
-        this.data.reset();
-        break;
-      }
-
-      else if (this.data.controls['username'].value == user1 && this.data.controls['username'].value != pass) {
-        alert("Invalid password");
-        this.data.reset();
-        break;
-      }
-
-      else {
-        alert("Invalid Login details");
+        return
       }
 
     }
+
+    alert("invalid login details");
+    console.log("Invalid login details");
+
+
+
 
   }
 
