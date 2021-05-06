@@ -117,7 +117,7 @@ export class DataComponent implements OnInit {
     if (res == true) {
       this.ds.delete(id).subscribe(
         data => {
-          console.log("Successfully delete the record");
+          alert("Successfully delete the record");
           console.log(data);
         }
       )
