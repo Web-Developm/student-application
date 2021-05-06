@@ -36,8 +36,11 @@ export class DialogComponent implements OnInit {
     )
   }
 
-  add() {
-    this.ds.add1();
+  add(index: any) {
+    if (index < 2) {
+      this.ds.add1();
+    }
+
   }
 
   remove(index: any) {
@@ -121,6 +124,7 @@ export class DialogComponent implements OnInit {
     this.ds.edit(primary, id).subscribe(
       data => {
         alert("Successfully updated");
+        console.log(data);
       }
     )
 
@@ -150,15 +154,15 @@ export class DialogComponent implements OnInit {
     this.addressarray.controls.forEach((element: any, index: any, array: any) => {
 
       this.data.address.forEach((val: any, i: number) => {
-          this.add();
-          this.addressarray.at(i).patchValue(
-            {
-              city: val.city,
-              street: val.street,
-              pincode: val.pincode,
-              state: val.state,
-              country: val.country
-            });
+        this.add(i);
+        this.addressarray.at(i).patchValue(
+          {
+            city: val?.city,
+            street: val?.street,
+            pincode: val?.pincode,
+            state: val?.state,
+            country: val?.country
+          });
 
       });
 

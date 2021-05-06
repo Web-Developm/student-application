@@ -79,36 +79,38 @@ export class DataComponent implements OnInit {
     this.list.filter = filterValue.trim().toLowerCase();
   }
 
-  /*update1(primary: any, index: any) {
-
+  /*update1(primary: any) {
     this.data.patchValue({
       id: primary.id,
       first: primary.first,
       last: primary.last,
       email: primary.email,
       gender: primary.gender,
-      phone: primary.phone,
+      phone: primary.phone
     });
 
     this.performance.patchValue({
       percentage: primary.percentage
     });
 
-    this.addressarray.controls.forEach((element:any,index:any,array:any)=>{
-      this.list.address.forEach((element:any,i:number)=>{
-        this.addressarray.at(i).patchValue({
-          city:element.city,
-          street:element.street,
-          pincode:element.pincode,
-          state:element.state,
-          country:element.country
-        })
-      })
-    })
+    this.addressarray.controls.forEach((element: any, index: any, array: any) => {
 
+      primary.address.forEach((val: any, i: number) => {
+        this.add();
+        this.addressarray.at(i).patchValue(
+          {
+            city: val.city,
+            street: val.street,
+            pincode: val.pincode,
+            state: val.state,
+            country: val.country
+          });
+
+      });
+
+    });
 
   }*/
-
 
 
   delete(id: any): void {

@@ -94,7 +94,6 @@ export class DataService implements OnInit {
   }
 
   delete(id: any): Observable<any> {
-    //const url='http://localhost:5555/personaldata/' +id;
 
     return this.http.delete(`${this.url}/${id}`);
   }
