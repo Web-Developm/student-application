@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, ComponentFactoryResolver, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, ComponentFactoryResolver } from '@angular/core';
 import { DataService } from '../data.service';
 import { FormControl, FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms';
 import { PersonalComponent } from '../personal/personal.component';
@@ -83,12 +83,21 @@ export class Form1Component implements OnInit {
   @ViewChild('personal', { static: false, read: ViewContainerRef }) target!: ViewContainerRef;
   public componentRef!: ComponentRef<any>;
 
+  i: any;
+
 
   addPersonal() {
 
-    let childComponent: any = this.resolver.resolveComponentFactory(PersonalComponent);
-    this.componentRef = this.target.createComponent(childComponent);
-    childComponent.destroy;
+    if (this.i == this.componentRef) {
+      let childComponent: any = this.resolver.resolveComponentFactory(PersonalComponent);
+      this.componentRef = this.target.createComponent(childComponent);
+    }
+
+    else{
+      alert("Alredy created");
+    }
+
+
 
   }
 
@@ -96,8 +105,16 @@ export class Form1Component implements OnInit {
   private componentRef1!: ComponentRef<any>;
 
   addPerformance() {
-    let childComponent = this.resolver.resolveComponentFactory(PerformanceComponent);
-    this.componentRef1 = this.target1.createComponent(childComponent);
+    if(this.i==this.componentRef1)
+    {
+      let childComponent = this.resolver.resolveComponentFactory(PerformanceComponent);
+      this.componentRef1 = this.target1.createComponent(childComponent);
+    }
+
+    else{
+      alert("already created");
+    }
+
 
   }
 
@@ -105,8 +122,26 @@ export class Form1Component implements OnInit {
   private componentRef2!: ComponentRef<any>;
 
   addaddress() {
-    let childComponent = this.resolver.resolveComponentFactory(AddressComponent);
+    if(this.i==this.componentRef2)
+    {
+      let childComponent = this.resolver.resolveComponentFactory(AddressComponent);
     this.componentRef2 = this.target2.createComponent(childComponent);
+    }
+
+    else{
+      alert("already created");
+    }
+
+  }
+
+  display() {
+    let index: any;
+    if (index < 2) {
+      this.addPersonal();
+      this.addPerformance();
+      this.addaddress();
+    }
+
   }
 
 
