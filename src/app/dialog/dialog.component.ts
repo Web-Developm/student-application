@@ -123,9 +123,10 @@ export class DialogComponent implements OnInit {
         alert("Successfully updated");
         console.log(data);
         this.display();
-
       }
     )
+
+
 
   }
 
@@ -156,7 +157,7 @@ export class DialogComponent implements OnInit {
 
 
 
-    this.data.address.findIndex((val: any, i: any, array: any) => {
+    this.data.address.forEach((val: any, i: any, array: any) => {
 
       this.remove(i);
       this.add();

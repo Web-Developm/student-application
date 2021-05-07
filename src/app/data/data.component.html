@@ -61,9 +61,9 @@
           <ng-container *ngFor="let address1 of element.address; let i=index">
             <div class="addresslist">
               <mat-list dense>
-                <mat-list-item [ngStyle]="{'text-decoration':'underline'}" role="listitem"></mat-list-item>
-                <mat-list-item role="listitem">{{address1.street}}{{address1.city}}</mat-list-item>
-                <mat-list-item role="listitem">{{address1.pincode}}{{address1.state}}</mat-list-item>
+                <mat-list-item [ngStyle]="{'text-decoration':'underline'}" role="listitem">{{addresstype[i]}}</mat-list-item>
+                <mat-list-item role="listitem">{{address1.street}} {{address1.city}}</mat-list-item>
+                <mat-list-item role="listitem">{{address1.pincode}} {{address1.state}}</mat-list-item>
                 <mat-list-item role="listitem">{{address1.country}}</mat-list-item>
               </mat-list>
             </div>
