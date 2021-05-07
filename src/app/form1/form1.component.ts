@@ -18,7 +18,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./form1.component.css'],
   providers: [DataService, Structure1],
 })
-export class Form1Component implements OnInit, OnDestroy {
+export class Form1Component implements OnInit {
 
   store!: Structure1[];
 
@@ -28,7 +28,7 @@ export class Form1Component implements OnInit, OnDestroy {
 
 
 
-  constructor(private ds: DataService, private resolver: ComponentFactoryResolver, private route:Router) { }
+  constructor(private ds: DataService, private resolver: ComponentFactoryResolver, private route: Router) { }
 
 
   public form: FormGroup = this.ds.personal;
@@ -41,7 +41,7 @@ export class Form1Component implements OnInit, OnDestroy {
 
 
 
-  arrayControl1 = this.form2.get('add') as FormArray;
+  arrayControl = this.form2.get('add') as FormArray;
 
   value3: any;
 
@@ -86,7 +86,7 @@ export class Form1Component implements OnInit, OnDestroy {
 
   addPersonal() {
 
-    let childComponent:any = this.resolver.resolveComponentFactory(PersonalComponent);
+    let childComponent: any = this.resolver.resolveComponentFactory(PersonalComponent);
     this.componentRef = this.target.createComponent(childComponent);
     childComponent.destroy;
 
@@ -124,7 +124,7 @@ export class Form1Component implements OnInit, OnDestroy {
     temp.gender = this.form.controls['gender'].value;
     temp.phone = this.form.controls['phone'].value;
     temp.percentage = this.form1.controls['percentage'].value;
-    temp.address = this.arrayControl1.value;
+    temp.address = this.arrayControl.value;
     console.log(temp);
 
 
@@ -140,7 +140,6 @@ export class Form1Component implements OnInit, OnDestroy {
     this.form.reset();
     this.form1.reset();
     this.form2.reset();
-    this.route.navigate(['/data']);
   }
 
 
@@ -156,13 +155,6 @@ export class Form1Component implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-
-  }
-
-  ngOnDestroy() {
-    this.componentRef.destroy();
-    this.componentRef1.destroy();
-    this.componentRef2.destroy();
 
   }
 

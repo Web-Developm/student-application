@@ -19,16 +19,9 @@
         {
           "street": "Guntur",
           "city": "Guntur",
-          "pincode": "23234",
+          "pincode": "2323",
           "state": "Andhra Pradesh",
           "country": "India"
-        },
-        {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
         }
       ]
     },
@@ -54,13 +47,6 @@
           "pincode": "232388",
           "state": "Andhra Pradesh",
           "country": "India"
-        },
-        {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
         }
       ]
     },
@@ -83,16 +69,9 @@
         {
           "street": "Mumbai",
           "city": "Mumbai",
-          "pincode": "3742847",
+          "pincode": "3742343434",
           "state": "Maharashtra",
           "country": "India"
-        },
-        {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
         }
       ]
     },
@@ -168,13 +147,6 @@
           "pincode": "232973",
           "state": "Tamil Nadu",
           "country": "India"
-        },
-        {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
         }
       ]
     },
@@ -200,13 +172,6 @@
           "pincode": "28748237",
           "state": "Sydney",
           "country": "Australia"
-        },
-        {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
         }
       ]
     },
@@ -215,23 +180,23 @@
       "first": "Colin",
       "last": "Glass",
       "email": "colin@gmail.com",
-      "gender": "Male",
-      "phone": "343434",
-      "percentage": "24",
+      "gender": "Female",
+      "phone": "8237283",
+      "percentage": "70",
       "address": [
         {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
+          "street": "Guntur",
+          "city": "Gunntur",
+          "pincode": "28384",
+          "state": "Andhra Pradesh",
+          "country": "India"
         },
         {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
+          "street": "Hyderabad",
+          "city": "Hyderabad",
+          "pincode": "2738",
+          "state": "Telangana",
+          "country": "India"
         }
       ]
     }

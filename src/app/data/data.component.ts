@@ -52,6 +52,7 @@ export class DataComponent implements OnInit {
 
   openDialog(primary: any, index: any) {
     this.dialog.open(DialogComponent, { data: primary, height: '650px', width: '600px' });
+
   }
 
 
@@ -121,6 +122,7 @@ export class DataComponent implements OnInit {
         data => {
           alert("Successfully delete the record");
           console.log(data);
+          this.datlist();
         }
       )
     }
@@ -145,16 +147,23 @@ export class DataComponent implements OnInit {
 
 
 
+
+
   ngOnInit(): void {
 
     this.list.paginator = this.paginator;
     this.list.sort = this.sort;
+
     this.ds.personaldata().subscribe(
       data => {
         this.list.data = data;
         console.log(data);
       }
     )
+
+
+
+
   }
 
 }

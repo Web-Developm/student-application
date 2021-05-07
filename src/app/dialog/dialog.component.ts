@@ -36,11 +36,8 @@ export class DialogComponent implements OnInit {
     )
   }
 
-  add(index: any) {
-    if (index < 2) {
-      this.ds.add1();
-    }
-
+  add() {
+    this.ds.add1();
   }
 
   remove(index: any) {
@@ -125,6 +122,8 @@ export class DialogComponent implements OnInit {
       data => {
         alert("Successfully updated");
         console.log(data);
+        this.display();
+
       }
     )
 
@@ -133,10 +132,14 @@ export class DialogComponent implements OnInit {
 
 
 
-  ngOnInit(): void {
+
+
+  ngOnInit(): any {
     this.display();
 
     console.log('datanshoumn', this.data);
+
+
 
     this.personal.patchValue({
       id: this.data.id,
@@ -151,22 +154,26 @@ export class DialogComponent implements OnInit {
       percentage: this.data.percentage
     });
 
-    this.addressarray.controls.forEach((element: any, index: any, array: any) => {
 
-      this.data.address.forEach((val: any, i: number) => {
-        this.add(i);
-        this.addressarray.at(i).patchValue(
-          {
-            city: val?.city,
-            street: val?.street,
-            pincode: val?.pincode,
-            state: val?.state,
-            country: val?.country
-          });
 
-      });
+    this.data.address.findIndex((val: any, i: any, array: any) => {
+
+      this.remove(i);
+      this.add();
+
+
+      this.addressarray.at(i).patchValue(
+        {
+          city: val.city,
+          street: val.street,
+          pincode: val.pincode,
+          state: val.state,
+          country: val.country
+        });
 
     });
+
+
 
 
 

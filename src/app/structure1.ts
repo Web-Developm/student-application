@@ -6,7 +6,7 @@ export class Structure1 {
   gender: any;
   phone: any;
   percentage: any;
-  address!: [{
+  address?: [{
     street: string;
     city: String;
     pincode: String;

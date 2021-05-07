@@ -10,7 +10,7 @@ import { Structure1 } from './structure1';
 export class DataService implements OnInit {
 
 
-  url = "http://localhost:5555/personaldata/";
+  url = "http://localhost:5555/personaldata";
 
 
   address!: FormGroup;
