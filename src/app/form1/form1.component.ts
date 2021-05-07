@@ -93,8 +93,8 @@ export class Form1Component implements OnInit {
       this.componentRef = this.target.createComponent(childComponent);
     }
 
-    else{
-      alert("Alredy created");
+    else {
+      alert("Already created");
     }
 
 
@@ -105,14 +105,13 @@ export class Form1Component implements OnInit {
   private componentRef1!: ComponentRef<any>;
 
   addPerformance() {
-    if(this.i==this.componentRef1)
-    {
+    if (this.i == this.componentRef1) {
       let childComponent = this.resolver.resolveComponentFactory(PerformanceComponent);
       this.componentRef1 = this.target1.createComponent(childComponent);
     }
 
-    else{
-      alert("already created");
+    else {
+      alert("Already created");
     }
 
 
@@ -122,14 +121,13 @@ export class Form1Component implements OnInit {
   private componentRef2!: ComponentRef<any>;
 
   addaddress() {
-    if(this.i==this.componentRef2)
-    {
+    if (this.i == this.componentRef2) {
       let childComponent = this.resolver.resolveComponentFactory(AddressComponent);
-    this.componentRef2 = this.target2.createComponent(childComponent);
+      this.componentRef2 = this.target2.createComponent(childComponent);
     }
 
-    else{
-      alert("already created");
+    else {
+      alert("Already created");
     }
 
   }

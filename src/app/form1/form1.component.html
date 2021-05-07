@@ -4,19 +4,25 @@
 
 
 
+  <mat-card>
+    <mat-card-content>
+      <button (click)="addPersonal()" mat-raised-button color="primary">Add Personal</button>
 
-  <button (click)="addPersonal()" mat-raised-button color="primary">Add Personal</button>
+      <button (click)="addPerformance()" mat-raised-button color="primary">Add Performance</button>
 
-  <button (click)="addPerformance()" mat-raised-button color="primary">Add Performance</button>
-
-  <button (click)="addaddress()" mat-raised-button color="primary">Add Address</button>
+      <button (click)="addaddress()" mat-raised-button color="primary">Add Address</button>
 
 
-  <div class="row" #personal></div>
+      <div class="row" #personal></div>
 
-  <div class="row" #performance></div>
+      <div class="row" #performance></div>
 
-  <div class="row" #address></div>
+      <div class="row" #address></div>
+    </mat-card-content>
+  </mat-card>
+
+
+
 
 
 

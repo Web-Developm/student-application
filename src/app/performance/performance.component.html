@@ -1,14 +1,11 @@
 <div class="container-fluid">
-  <mat-card>
-    <mat-card-content>
-      <form [formGroup]="per">
-        <mat-form-field appearance="outline">
-          <mat-label>Percentage</mat-label>
-          <input matInput placeholder="percentage" formControlName="percentage" required>
-          <mat-error *ngIf="per.controls['percentage'].invalid">{{getpercentage()}}</mat-error>
-        </mat-form-field>
-      </form>
-    </mat-card-content>
-  </mat-card>
+
+  <form [formGroup]="per">
+    <mat-form-field appearance="outline">
+      <mat-label>Percentage</mat-label>
+      <input matInput placeholder="percentage" formControlName="percentage" required>
+      <mat-error *ngIf="per.controls['percentage'].invalid">{{getpercentage()}}</mat-error>
+    </mat-form-field>
+  </form>
 
 </div>
