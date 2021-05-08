@@ -217,24 +217,6 @@
           "country": ""
         }
       ]
-    },
-    {
-      "id": "10",
-      "first": "satya",
-      "last": "krishna",
-      "email": "satya@gmail.com",
-      "gender": "Male",
-      "phone": "348934",
-      "percentage": "",
-      "address": [
-        {
-          "street": "",
-          "city": "",
-          "pincode": "",
-          "state": "",
-          "country": ""
-        }
-      ]
     }
   ]
 }
