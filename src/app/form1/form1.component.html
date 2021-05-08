@@ -1,10 +1,12 @@
-<h1 class="mat-h1" align="center"><i class="fas fa-user-circle"></i> Add User</h1>
-
 <div class="container top">
 
 
 
-  <mat-card>
+
+
+  <mat-card class="card">
+    <h1 class="mat-h1" align="center"><i class="fas fa-user-circle"></i> Add User</h1>
+
     <mat-card-content>
       <button (click)="addPersonal()" mat-raised-button color="primary">Add Personal</button>
 
@@ -18,8 +20,6 @@
       <div class="row" #performance></div>
 
       <div class="row" #address></div>
-    </mat-card-content>
-  </mat-card>
 
 
 
@@ -29,5 +29,9 @@
   <div class="text-center">
     <button (click)="addpersonaldata()" [disabled]="form1.invalid" mat-raised-button color="primary">Submit</button>
   </div>
+
+</mat-card-content>
+</mat-card>
+
 
 </div>
