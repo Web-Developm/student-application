@@ -58,17 +58,21 @@ export class InfoComponent implements OnInit {
 
 
 
-      if (this.data.controls['username'].value == this.store[i].username &&  this.data.controls['password'].value == this.store[i].password) {
+      if (this.data.controls['username'].value == this.store[i].username && this.data.controls['password'].value == this.store[i].password) {
         alert("Login successfull");
         this.route.navigate(['/data']);
         this.data.reset();
         return
       }
 
+      alert("invalid login details");
+      console.log("Invalid login details");
+      this.data.reset();
+      break;
+
     }
 
-    alert("invalid login details");
-    console.log("Invalid login details");
+
 
 
 
