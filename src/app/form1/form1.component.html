@@ -27,7 +27,7 @@
 
 
   <div class="text-center">
-    <button (click)="addpersonaldata()" mat-raised-button color="primary">Submit</button>
+    <button (click)="addpersonaldata()" [disabled]="form1.invalid" mat-raised-button color="primary">Submit</button>
   </div>
 
 </div>
