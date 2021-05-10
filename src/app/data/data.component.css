@@ -2,6 +2,20 @@
   font-size: 18px;
 }
 
+.menu{
+  background-color: #1e6f5c;
+}
+
+.btn{
+  background-color: #1e6f5c;
+  color: white;
+  border:none;
+}
+
+a{
+  border: none;
+}
+
 .form{
 
   margin-top:10px;
