@@ -47,28 +47,7 @@ export class ResultComponent implements OnInit {
     )
   }
 
-  update1(primary: any, index: any) {
-    this.personal.setValue({
-      first: primary.first,
-      last: primary.last,
-      email: primary.email,
-      gender: primary.gender,
-      phone: primary.phone,
-    });
 
-    this.performance.setValue({
-      percentage: primary.percentage
-    });
-
-    this.address.setValue({
-      street: primary.street,
-      city: primary.city,
-      pincode: primary.pincode,
-      state: primary.state,
-      country: primary.country
-    });
-
-  }
 
   ngOnInit(): void {
     let id = this.route.params.subscribe((params: any) => {
