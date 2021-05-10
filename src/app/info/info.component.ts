@@ -61,7 +61,9 @@ export class InfoComponent implements OnInit {
         this.data.reset();
       }
 
-      return "Invalid login details";
+      this.data.reset();
+
+
 
 
     }
