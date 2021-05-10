@@ -5,6 +5,8 @@
   padding-bottom:30px;
 }
 
+
+
 h1{
   font-size: 35px;
   padding-top: 20px;
@@ -12,8 +14,11 @@ h1{
 }
 
 .card{
-  border:1px dashed black;
+  border:1px dashed #a2d5c6;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
 
 button{
   margin:10px;
@@ -24,3 +29,17 @@ table{
   width:100%;
 }
 
+.personal{
+  background-color: #d72631;
+  color:white;
+}
+
+.performance{
+  background-color: #077b8a;
+  color:white;
+}
+
+.address{
+  background-color: #5c3c92;
+  color: white;
+}

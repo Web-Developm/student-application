@@ -67,6 +67,28 @@ export class DataService implements OnInit {
     });
   }
 
+  countrrydetails = [
+    {
+      value:'Inda', viewValue:'India'
+    },
+
+    {
+      value:'Russia', viewValue:'Russia'
+    },
+
+    {
+      value:'China', viewValue:'China'
+    },
+
+    {
+      value:'United Kingdom', viewValue:'United Kingdom'
+    },
+
+    {
+      value:'Nepal', viewValue:'Nepal'
+    },
+  ]
+
 
   add1() {
     this.add().push(this.fields());
