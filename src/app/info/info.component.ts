@@ -56,13 +56,17 @@ export class InfoComponent implements OnInit {
     this.store.forEach((element: any, index: any, array: any) => {
       if (element.username === user1 && element.password === pass) {
 
-        alert("Login successfull");
         this.route.navigateByUrl('/data');
+        alert("Login successfull");
         this.data.reset();
       }
 
+      return "Invalid login details";
 
-    })
+
+    }
+
+    )
 
 
 
