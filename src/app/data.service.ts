@@ -102,6 +102,12 @@ export class DataService implements OnInit {
     return this.http.get("http://localhost:3000/login");
   }
 
+  logindata(username:string, password:string): Observable<any> {
+    return this.http.get("http://localhost:3000/login");
+  }
+
+
+
   //Personal data
   personaldata(): Observable<any> {
     return this.http.get("http://localhost:5555/personaldata");

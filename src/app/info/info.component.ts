@@ -12,7 +12,7 @@ export class InfoComponent implements OnInit {
 
   constructor(private ds: DataService, private route: Router) { }
 
-  store: any;
+  public store!: any;
 
   public data: FormGroup = this.ds.data;
 
@@ -48,30 +48,21 @@ export class InfoComponent implements OnInit {
 
   check() {
 
+    const user1 = this.data.controls['username'].value;
+
+    const pass = this.data.controls['password'].value;
 
 
-    for (let i = 0; i <= this.store.length; i++) {
+    this.store.forEach((element: any, index: any, array: any) => {
+      if (element.username === user1 && element.password === pass) {
 
-      let user1 = this.data.controls['username'].value;
-
-      let pass = this.data.controls['password'].value;
-
-
-
-      if (this.data.controls['username'].value == this.store[i].username && this.data.controls['password'].value == this.store[i].password) {
         alert("Login successfull");
-        this.route.navigate(['/data']);
+        this.route.navigateByUrl('/data');
         this.data.reset();
-        return
       }
 
-      alert("invalid login details");
-      console.log("Invalid login details");
-      this.data.reset();
-      break;
 
-    }
-
+    })
 
 
 
