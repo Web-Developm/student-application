@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { DataService } from '../app/data.service';
 import { Structure1 } from './structure1';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -38,6 +39,7 @@ export class AuthGuard implements CanActivate {
     }
     else {
       alert("You don't have permisssion to view this page");
+      this.route.navigate(['/login']);
       return false;
     }
 

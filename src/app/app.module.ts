@@ -37,6 +37,7 @@ import { ResultComponent } from './result/result.component';
 import { DialogComponent } from './dialog/dialog.component';
 
 import { AuthGuard } from './auth.guard';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { AuthGuard } from './auth.guard';
     AddressComponent,
     DataComponent,
     ResultComponent,
-    DialogComponent
+    DialogComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

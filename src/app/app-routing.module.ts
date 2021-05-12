@@ -6,6 +6,7 @@ import { AuthGuard } from './auth.guard';
 import { DataComponent } from './data/data.component';
 import { Form1Component } from './form1/form1.component';
 import { ResultComponent } from './result/result.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
   {
@@ -20,14 +21,15 @@ const routes: Routes = [
   },
 
   {
-    path: "array", component: AddressComponent
-  },
-  {
     path: "data", component: DataComponent, canActivate: [AuthGuard]
   },
 
   {
     path: "result/:id", component: ResultComponent, canActivate: [AuthGuard]
+  },
+
+  {
+    path:"**", component:PagenotfoundComponent
   }
 
 ];
@@ -37,4 +39,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const route = [InfoComponent, DataComponent, ResultComponent];
+export const route = [InfoComponent, DataComponent, ResultComponent,PagenotfoundComponent];
