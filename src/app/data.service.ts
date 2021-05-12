@@ -12,6 +12,8 @@ export class DataService implements OnInit {
 
   url = "http://localhost:5555/personaldata";
 
+  loginurl = "http://localhost:3000/login";
+
 
   address!: FormGroup;
   constructor(private fb: FormBuilder, private http: HttpClient) {
@@ -69,23 +71,23 @@ export class DataService implements OnInit {
 
   countrrydetails = [
     {
-      value:'Inda', viewValue:'India'
+      value: 'Inda', viewValue: 'India'
     },
 
     {
-      value:'Russia', viewValue:'Russia'
+      value: 'Russia', viewValue: 'Russia'
     },
 
     {
-      value:'China', viewValue:'China'
+      value: 'China', viewValue: 'China'
     },
 
     {
-      value:'United Kingdom', viewValue:'United Kingdom'
+      value: 'United Kingdom', viewValue: 'United Kingdom'
     },
 
     {
-      value:'Nepal', viewValue:'Nepal'
+      value: 'Nepal', viewValue: 'Nepal'
     },
   ]
 
@@ -98,12 +100,16 @@ export class DataService implements OnInit {
     this.add().removeAt(index);
   }
 
+
+
+
+
   login(): Observable<any> {
     return this.http.get("http://localhost:3000/login");
   }
 
-  logindata(username:string, password:string): Observable<any> {
-    return this.http.get("http://localhost:3000/login");
+  logindata(username: string) {
+    return this.http.post(this.loginurl, username);
   }
 
 
@@ -124,6 +130,10 @@ export class DataService implements OnInit {
   delete(id: any): Observable<any> {
 
     return this.http.delete(`${this.url}/${id}`);
+  }
+
+  isLogged():boolean{
+    return false;
   }
 
   ngOnInit() {

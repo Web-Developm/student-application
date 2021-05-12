@@ -18,6 +18,8 @@ export class InfoComponent implements OnInit {
 
   hide = true;
 
+  loginuserData: any = {}
+
   getusername() {
     if (this.data.controls['username'].hasError('required')) {
       return "Username required";
@@ -69,6 +71,8 @@ export class InfoComponent implements OnInit {
     }
 
     )
+
+
 
 
 

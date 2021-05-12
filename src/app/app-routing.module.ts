@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { InfoComponent } from '../app/info/info.component';
 import { AddressComponent } from './address/address.component';
+import { AuthGuard } from './auth.guard';
 import { DataComponent } from './data/data.component';
 import { Form1Component } from './form1/form1.component';
 import { ResultComponent } from './result/result.component';
@@ -15,18 +16,18 @@ const routes: Routes = [
   },
 
   {
-    path: 'form', component: Form1Component
+    path: 'form', component: Form1Component, canActivate: [AuthGuard]
   },
 
   {
     path: "array", component: AddressComponent
   },
   {
-    path: "data", component: DataComponent
+    path: "data", component: DataComponent, canActivate: [AuthGuard]
   },
 
   {
-    path: "result/:id", component: ResultComponent
+    path: "result/:id", component: ResultComponent, canActivate: [AuthGuard]
   }
 
 ];

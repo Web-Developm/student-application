@@ -36,6 +36,8 @@ import { DataComponent } from './data/data.component';
 import { ResultComponent } from './result/result.component';
 import { DialogComponent } from './dialog/dialog.component';
 
+import { AuthGuard } from './auth.guard';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,7 +74,7 @@ import { DialogComponent } from './dialog/dialog.component';
     MatCardModule,
     MatDialogModule
   ],
-  providers: [DataService, Structure1],
+  providers: [DataService, Structure1, AuthGuard],
   bootstrap: [AppComponent],
   entryComponents: [PersonalComponent, PerformanceComponent, AddressComponent]
 })

@@ -11,6 +11,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FormArray, FormGroup } from '@angular/forms';
+import { HashLocationStrategy, Location, LocationStrategy } from '@angular/common';
 
 
 
@@ -19,6 +20,7 @@ import { FormArray, FormGroup } from '@angular/forms';
   selector: 'app-data',
   templateUrl: './data.component.html',
   styleUrls: ['./data.component.css'],
+  providers: [Location, { provide: LocationStrategy, useClass: HashLocationStrategy }]
 })
 export class DataComponent implements OnInit {
 
@@ -26,7 +28,11 @@ export class DataComponent implements OnInit {
 
   expandedElement!: Structure1 | null;
 
-  constructor(public ds: DataService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog) { }
+  location!: Location;
+
+  constructor(public ds: DataService, private route: ActivatedRoute, private router: Router, public dialog: MatDialog, location: Location) {
+    this.location = location;
+  }
 
 
 
